@@ -1,0 +1,158 @@
+{
+     "$schema": "https://schemas.wp.org/trunk/theme.json",
+     "version": 3,
+     "styles": {
+          "blocks": {
+               "core/button": {
+                    "color": {
+                         "text": "var(--wp--preset--color--defblack)",
+                         "background": "var(--wp--preset--color--defwhite)"
+                    },
+                    "border": {
+                         "radius": "4px 4px 4px 4px",
+                         "color": "",
+                         "style": ""
+                    },
+                    "spacing": {
+                         "margin": {},
+                         "padding": {}
+                    }
+               }
+          }
+     },
+     "settings": {
+          "border": {
+               "radius": false,
+               "color": false,
+               "style": false,
+               "width": false
+          },
+          "blocks": {
+               "core/button": {
+                    "border": {
+                         "radius": false,
+                         "color": false,
+                         "style": false,
+                         "width": false
+                    },
+                    "color": {
+                         "text": false,
+                         "background": false
+                    }
+               }
+          },
+          "color": {
+               "defaultPalette": false,
+               "defaultGradients": false,
+               "palette": [
+                    {
+                         "slug": "primary",
+                         "color": "#005aa8",
+                         "name": "Primary"
+                    },
+                    {
+                         "slug": "secondary",
+                         "color": "#69a52b",
+                         "name": "Secondary"
+                    },
+                    {
+                         "slug": "tertiary",
+                         "color": "#e6f3ff",
+                         "name": "Tertiary"
+                    },
+                    {
+                         "slug": "alerts",
+                         "color": "#F77E0F",
+                         "name": "Alerts"
+                    },
+                    {
+                         "slug": "defwhite",
+                         "color": "#ffffff",
+                         "name": "White"
+                    },
+                    {
+                         "slug": "defblack",
+                         "color": "#000000",
+                         "name": "Black"
+                    }
+               ],
+               "gradients": [
+                    {
+                         "name": "Blue Gradient Overlay",
+                         "slug": "primary-gradient-overlay",
+                         "gradient": "linear-gradient(90deg, rgba(0, 90, 168, 1) 0%, rgba(0, 90, 168, 1) 25%, rgba(0, 90, 168, 0) 100%)"
+                    },
+                    {
+                         "name": "Green Gradient Overlay",
+                         "slug": "secondary-gradient-overlay",
+                         "gradient": "linear-gradient(90deg, rgba(105, 165, 43, 1) 0%, rgba(105, 165, 43, 1) 25%, rgba(105, 165, 43, 0) 100%)"
+                    },
+                    {
+                         "name": "Light blue Gradient Overlay",
+                         "slug": "tertiary-gradient-overlay",
+                         "gradient": "linear-gradient(90deg, rgba(230, 243, 255, 1) 0%, rgba(230, 243, 255, 1) 25%, rgba(230, 243, 255, 0) 100%)"
+                    },
+                    {
+                         "name": "Orange Gradient Overlay",
+                         "slug": "alerts-gradient-overlay",
+                         "gradient": "linear-gradient(90deg, rgba(247, 126, 15, 1) 0%, rgba(247, 126, 15, 1) 25%, rgba(247, 126, 15, 0) 100%)"
+                    }
+               ]
+          },
+          "typography": {
+               "fontSizes": [
+                    {
+                         "name": "Headline 1",
+                         "slug": "h1",
+                         "size": "36px"
+                    },
+                    {
+                         "name": "Headline 2",
+                         "slug": "h2",
+                         "size": "30px"
+                    },
+                    {
+                         "name": "Headline 3",
+                         "slug": "h3",
+                         "size": "28px"
+                    },
+                    {
+                         "name": "Headline 4",
+                         "slug": "h4",
+                         "size": "24px"
+                    },
+                    {
+                         "name": "Headline 5",
+                         "slug": "h5",
+                         "size": "21px"
+                    },
+                    {
+                         "name": "Headline 6",
+                         "slug": "h6",
+                         "size": "18px"
+                    },
+                    {
+                         "name": "Subhead/Callout",
+                         "slug": "intro-callout",
+                         "size": "21px"
+                    },
+                    {
+                         "name": "Paragraph",
+                         "slug": "paragraph",
+                         "size": "18px"
+                    },
+                    {
+                         "name": "Small",
+                         "slug": "small",
+                         "size": "16px"
+                    }
+               ]
+          },
+          "layout": {
+               "contentSize": "1440px"
+          },
+          "custom": {
+            "templateParts": "header"
+          }
+     }
+}

@@ -1,0 +1,193 @@
+/* PreFooter */
+.title_vi_menu{
+     margin: var(--spacegrid) 0 0 0;
+}
+
+#menu-title-vi{
+	display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(95px, auto));
+     padding: var(--spacesmall) var(--spacereg) 0 var(--spacereg);
+     gap: var(--spacereg);
+}
+
+.menu-title-vi-container{
+	padding: 10px 0;
+	background-color: rgba(0, 0, 0, .05);
+}
+
+#menu-title-vi li{
+	list-style: none;
+}
+
+#menu-title-vi li a{
+     display: inline-block;
+     position: relative;
+	font: var(--header_five);
+     line-height: 1.75rem;
+	color: var(--black);
+}
+
+#menu-title-vi li a::after{
+     content: '';
+     display: block;
+     width: 0;
+     border-bottom: 3px solid transparent;
+     transition: all var(--primary-transition);
+}
+
+#menu-title-vi li a:hover,
+#menu-title-vi li a:focus{
+	color: var(--black-fifty);
+}
+
+#menu-title-vi li a:hover::after,
+#menu-title-vi li a:focus::after{
+     width: 100%;
+     border-bottom: 3px solid var(--black-fifty);
+     transition: all var(--primary-transition);
+}
+/* PreFooter - END */
+
+/* Footer */
+#colophon{
+	position: relative;
+	padding: 9px 18px 125px 18px;
+	background-color: #005aa8;
+}
+
+#colophon section#custom_html-2{
+	padding: 18px 0 0 0;
+}
+
+#colophon section#custom_html-2 .custom-html-widget h2{
+	font-size: 27px;
+	padding: 0;
+}
+
+#colophon *{
+	color: var(--white);
+}
+
+#colophon .widget_text p{
+	padding: 0 !important;
+	line-height: 1.4
+}
+
+#colophon .widget_text p a{
+	font-size: .75rem;
+	font-weight: 600;
+	text-decoration: underline;
+	line-height: 1.4
+}
+
+#colophon .widget_text p a::after{
+	height: 0;
+	background-color: transparent;
+}
+
+#colophon .widget_text h2{
+	padding: 0;
+}
+
+#colophon .widget-text{
+	padding: 18px 0;
+}
+
+#custom_html-2 .widget-title{
+	display: none;
+}
+
+#colophon .widget_text h2.widget_padding{
+	padding: 9px 0 0 0;
+}
+
+#menu-social-nav{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 400px;
+	padding: 18px;
+	margin: 0 auto;
+}
+
+#menu-social-nav li{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+#menu-social-nav li a{
+	display: block;
+	width: 15px;
+	height: 15px;
+}
+
+#colophon li a svg{
+	display: block;
+	width: 100%;
+	height: calc(100%);
+}
+
+#colophon .search-form{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	top: 9px;
+	right: 9px;
+	box-sizing: border-box;
+	margin: 0 !important;
+}
+
+#colophon .search-form label{
+	display: inline-block !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	height: 30px !important;
+	width: 150px !important;
+}
+
+#colophon .search-form label span{
+	displaY: none !important;
+}
+
+#colophon .search-form label input{
+	display: block !important;
+	width: 100% !important;
+	height: calc(100%) !important;
+	max-height:30px !important;
+}
+
+#colophon .search-form input[type="submit"]{
+	display: block;
+	width: calc(50px);
+	height: calc(30px);
+	background-color: var(--white);
+	border-radius: 0 !important;
+	background-image: url('../images/Icon_search.png');
+	background-repeat: no-repeat;
+	background-size: 35%;
+	background-position-x: 80%;
+	background-position-y: center;
+}
+
+#colophon .search-form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+#colophon .search-form input[type="submit"] > *{
+	display: block;
+	width: auto;
+	height: 25px;
+}
+
+#colophon .search-form input{
+	height: 25px;
+	color: #000;
+	box-sizing: border-box;
+	padding: 0 9px;
+	border-radius: 0;
+	border: none;
+	box-shadow: none;
+}
+/* Footer - END */

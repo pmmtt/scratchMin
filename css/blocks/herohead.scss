@@ -1,0 +1,163 @@
+.hero-block{
+     display: block;
+     position: relative;
+     width: 100%;
+     padding: 0;
+     background-position: center center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     overflow: hidden;
+     container-type: inline-size;
+
+     &.has-background::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+     }
+
+     figure{
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          z-index: 0;
+     }
+
+     .hero-inner-wrap{
+          position: relative;
+          z-index: 100;
+
+          h1, h2, h3{
+               padding: 0 0 var(--spacereg) 0;
+          }
+     }
+     
+     &.styleOne, &.styleTwo{
+          .hero-inner-wrap{
+               width: 100%;
+               height: 100%;
+               padding: var(--spacereg);
+               background-color: var(--tertiary-ninety);
+               overflow: hidden;
+     
+               figure{
+                    img{
+                         width: 100%;
+                         height: 100%;
+                         object-fit: cover;
+                         object-position: center center;
+                    }
+               }
+          }
+     }
+     
+     &.styleOne{
+          height: 630px;
+     }
+     
+     &.styleTwo{
+          height: 450px;
+     }
+
+     &.styleThree{
+          &.has-background{
+               img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+               }
+          }
+
+          &.has-primary-background-color{
+               &::after{
+                    background: linear-gradient(90deg, rgba(0, 90, 168, 1) 0%, rgba(0, 90, 168, 1) 35%, rgba(0, 90, 168, .15) 100%);
+               }
+          }
+
+          &.has-secondary-background-color{
+               &::after{
+                    background: linear-gradient(90deg, rgba(105, 165, 43, 1) 0%, rgba(105, 165, 43, 1) 35%, rgba(105, 165, 43, .15) 100%);
+               }
+          }
+
+          &.has-tertiary-background-color{
+               &::after{
+                    background: linear-gradient(90deg, rgba(230, 243, 255, 1) 0%, rgba(230, 243, 255, 1) 35%, rgba(230, 243, 255, .15) 100%);
+               }
+          }
+
+          &.has-alerts-background-color{
+               &::after{
+                    background: linear-gradient(90deg, rgba(247, 126, 15, 1) 0%, rgba(247, 126, 15, 1) 35%, rgba(247, 126, 15, .15) 100%);
+               }
+          }
+     }
+
+     @container (min-width: 890px){
+          &.styleOne, &.styleTwo{
+               display: grid;
+               place-items: center;
+               place-content: center;
+     
+               .hero-inner-wrap{
+                    width: 780px;
+               }
+          }
+     
+          &.styleOne{
+               .hero-inner-wrap{
+                    height: 500px;
+               }
+          }
+     
+          &.styleTwo{
+               padding: var(--spacexl) 0;
+               .hero-inner-wrap{
+                    height: auto;
+                    max-height: 350px;
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+               }
+          }
+     
+          &:not(.styleOne){
+               display: grid;
+               align-items: center;
+               height: 450px;
+          }
+     }
+
+     @container (min-width: 1024px){
+          &.styleThree, &.styleFour, &.styleFive{
+               .hero-inner-wrap{
+                    padding-right: calc(var(--max-content-padding) * 4);
+               }
+          }
+     }
+
+     @container (min-width: 1100px){
+          &.styleThree, &.styleFour, &.styleFive{
+               figure{
+                    width: 65%;
+                    height: 100%;
+                    right: 0;
+                    left: auto;
+               }
+          }
+     }
+
+     @container (min-width: 1200px){
+          &.styleThree, &.styleFour, &.styleFive{
+               .hero-inner-wrap{
+                    padding-right: calc(var(--max-content-padding) * 7);
+               }
+          }
+     }
+} 

@@ -1,0 +1,222 @@
+// Card Grid
+.card_grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: var(--spacereg);
+     align-items: start;
+     align-content: stretch;
+     justify-items: stretch;
+     width: 100%;
+     max-width: var(--max-width);
+     margin: 0 auto;
+}
+
+.icon-grid {
+     max-width: var(--max-content-width);
+}
+
+.link-grid {
+     grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+     gap: var(--spacelarge);
+}
+
+.icon-grid {
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: var(--spacelarge);
+     padding: var(--spacexl) 0;
+}
+
+.card_grid:not(.icon-grid) {
+     padding: 0;
+}
+
+// Card Grid - END
+
+// Grid Card
+.grid_card {
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto 90px;
+}
+
+.icon-grid .grid_card {
+     grid-template-rows: auto 55px auto;
+     gap: var(--spacereg);
+     overflow: hidden;
+}
+
+.grid_card figure {
+     aspect-ratio: 1/1;
+     overflow: hidden;
+}
+
+.grid_card img,
+.block-query img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+}
+
+.icon-grid figure {
+     aspect-ratio: unset;
+}
+
+.icon-grid img,
+.icon-grid svg {
+     display: grid;
+     width: 100px;
+     height: 100px;
+     margin: 0 auto var(--spacesmall) auto;
+}
+
+.grid_card p:not(.query_placeholder p.h2, .query-links p) {
+     height: 100%;
+     padding: var(--spacereg);
+     color: var(--white);
+     background-color: var(--secondary);
+     margin: 0;
+     padding: var(--spacereg) var(--spacelarge);
+}
+
+.icon-grid .grid_card p {
+     padding: 0 var(--spacereg);
+}
+
+.grid_card p:not(.card_byline),
+.grid_card p:not(.card_byline) strong {
+     font: var(--header_five);
+     font-weight: var(--fnt-wght-bold);
+}
+
+.grid_card p.card_byline {
+     font: var(--body-reg);
+     padding: 0 var(--spacelarge) var(--spacereg) var(--spacelarge);
+}
+
+.grid_card p.card_byline strong {
+     font: var(--body-reg);
+}
+
+.icon-grid .grid_card p.card_byline {
+     font: var(--body-reg);
+     padding: 0 var(--spacereg);
+}
+
+.add-sub-head p.card_byline {
+     display: block;
+}
+
+.rmv-sub-head p.card_byline {
+     display: none;
+}
+
+.icon-grid p {
+     color: var(--primary);
+     background-color: transparent;
+}
+
+.grid_card p span {
+     display: inline-block;
+     position: relative;
+     width: 18px;
+     height: 23px;
+     margin: 0 0 0 var(--spacesmall);
+     transition: margin var(--primary-transition);
+}
+
+.grid_card:hover p span,
+.grid_card:focus p span {
+     margin: 0 0 0 var(--spacereg);
+     transition: margin var(--primary-transition);
+}
+
+.grid_card svg {
+     display: inline-block;
+     top: 8px;
+     width: auto;
+     height: 18px;
+     fill: var(--white);
+}
+
+.icon-grid svg path {
+     fill: var(--primary);
+}
+
+// Grid Card - END
+
+// Custom Group Card Grid
+.query-links{
+     a {
+          display: block;
+          position: relative;
+     }
+
+     a > div:not(.query_placeholder){
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          padding: var(--spacereg) var(--spacelarge);
+          min-height: 90px;
+     }
+
+     figure, .query_placeholder {
+          display: block;
+          aspect-ratio: 1/1;
+     }
+
+     p:not(.query_placeholder p.h2){
+          color: var(--white);
+     }
+
+     p.h5 {
+          padding: 0 ;
+          height: 50px;
+     }
+
+     p.card_byline {
+          height: auto;
+          max-height: 0;
+          padding: var(--spacereg) 0 0 0;
+          overflow: hidden;
+          transition: max-height var(--slow-transition);
+     }
+
+     .blck_lnk_arrow {
+          fill: var(--white);
+     }
+
+     a:hover .card_byline,
+     a:focus .card_byline,
+     a:focus-within .card_byline {
+          max-height: 500px;
+          transition: max-height var(--slow-transition);
+     }
+
+     .query_placeholder {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto 100px;
+          place-content: center;
+          place-items: center;
+          background-color: var(--white);
+     }
+
+     .query_placeholder svg {
+          display: block;
+          width: 150px;
+          height: auto;
+     }
+
+     .query_placeholder p {
+          width: fit-content;
+          transform: skew(-10deg);
+     }
+
+     .query_placeholder p.h2{
+          color: var(--primary);
+     }
+}
+
+// Custom Group Card Grid - END

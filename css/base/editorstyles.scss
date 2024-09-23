@@ -1,0 +1,72 @@
+.card_grid > .block-editor-inner-blocks > .block-editor-block-list__layout{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     align-items: start;
+     align-content: stretch;
+     justify-items: stretch;
+     width: 100%;
+     max-width: var(--max-width);
+     margin: 0 auto;
+}
+
+.card_grid.quick-links > .block-editor-inner-blocks > .block-editor-block-list__layout{
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card_grid.link-grid > .block-editor-inner-blocks > .block-editor-block-list__layout{
+     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+     gap: var(--spacelarge);
+}
+
+.block-editor-block-list__block .grid_card{
+     max-width: 550px;
+}
+
+.grid_card .block-editor-block-list__layout{
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto 100px;
+}
+
+.grid_card .block-editor-block-list__layout figure div{
+     width: 100%;
+     height: 100%;
+     aspect-ratio: 1/1;
+     overflow: hidden;
+}
+
+.grid_card .block-editor-block-list__layout figure.is-selected div{
+     width: 100%;
+     height: auto;
+     aspect-ratio: unset;
+     overflow: hidden;
+}
+
+.grid_card .block-editor-block-list__layout img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+}
+
+.editor-styles-wrapper.block-editor-writing-flow{
+     height: calc(100vh - 100px) !important;
+}
+
+.components-button.is-active{
+     color: #fff;
+     background-color: blue;
+}
+
+.editor-styles-wrapper .grid_card p.card_byline span{
+     width: auto;
+}
+
+.editor-styles-wrapper{
+     .guidesmap_dest{
+          border: 2px solid var(--primary);
+     }
+
+     .tabWrap{
+          display: block !important;
+     }
+}

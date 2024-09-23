@@ -1,0 +1,16 @@
+.page-welcome .has-background em,
+.page-bienvenido .has-background em{
+     display: inline;
+     font: var(--header_three);
+     font-style: normal;
+     color: var(--secondary);
+     background-color: var(--white);
+     padding-left: var( --spacesmall);
+     padding-right: var( --spacesmall);
+     margin-left: var(--spacesmall);
+}
+
+.page-welcome .has-icons figure img,
+.page-bienvenido .has-icons figure img{
+     max-width: 75px;
+}

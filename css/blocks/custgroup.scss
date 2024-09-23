@@ -1,0 +1,27 @@
+.custgroup:not(.full-width, .full-mobile-limit-desktop, .full-mobile-limit-desktop){
+     margin: 0 auto;
+     padding: 0 var(--spacereg) var(--spacelarge) var(--spacereg);
+}
+
+.full-width{
+     padding: 0 0 var(--spacereg) 0;
+}
+
+.limit-width{
+     max-width: var(--max-width);
+}
+
+.small-width{
+     max-width: var(--max-content-width);
+}
+
+.full-mobile-limit-desktop{
+     max-width: var(--max-width);
+     margin: 0 auto;
+     padding: 0 0 var(--spacereg) 0;
+}
+
+.full-mobile-limit-desktop:not(:first-of-type),
+.full-width.has-background{
+     padding: var(--spacelarge);
+}

@@ -1,0 +1,211 @@
+.guidesmap_wrap{
+     --guides-max-width: 485px;
+     --guides-max-height: 65vh;
+}
+
+.guidesmap_wrap{
+     padding: 0;
+     margin: 0 0 var(--spacelarge) 0;
+     overflow:hidden;
+}
+
+.accord_sec_wrap{
+     max-width: var(--guides-max-width);
+     height: auto;
+     max-height: 50px;
+     margin: 0 var(--spacereg) 0 auto;
+     overflow: hidden;
+     transition: all .25s ease-in-out;
+}
+
+.editor-styles-wrapper .accord_sec_wrap{
+     max-height: 1000vh;
+}
+
+.accord_sec_wrap.active{
+     max-height: 50vh;
+     overflow-x: hidden;
+     overflow-y: scroll;
+     border-bottom: 2px solid var(--primary);
+     transition: all .25s ease-in-out .15s;
+}
+
+.accord_sec_wrap.active .block-button a.block-button__link{
+     color: var(--white);
+     background-color: var(--primary);
+     transition: all .25s ease-in-out;
+}
+
+.guides_intro{
+     position: sticky;
+     top: 0;
+     width: 100%;
+     padding: var(--spacelarge) var(--spacereg);
+     margin: 0 0 0 auto;
+     background-color: var(--tertiary);
+     overflow-x: hidden;
+     overflow-y: scroll;
+}
+
+.guides_intro .block-heading,
+.guides_intro p{
+     display: block;
+     max-width: var(--guides-max-width);
+     margin: 0 0 0 auto;
+}
+
+// Maps Styles
+.gm-style-iw-chr, .gm-ui-hover-effect{
+     display: none;
+     opacity: 0;
+}
+
+.gm-style .gm-style-iw-c p{
+     padding: 0;
+}
+
+.gm-style .gm-style-iw-c{
+     padding: 0 !important;
+     background-color: var(--white);
+     outline: 5px solid var(--secondary);
+}
+
+.gm-style .gm-style-iw-tc{
+     top: -12px;
+     left: -5px;
+     width: 18px;
+     height: 18px;
+     background-color: var(--white);
+     border-bottom: 5px solid var(--secondary);
+     border-left: 5px solid var(--secondary);
+     rotate: -45deg;
+     border-radius: 0 100vw 0 0;
+     z-index: -1;
+}
+
+.guides_map_marker{
+     padding: var(--spacesmall) var(--spacereg);
+}
+
+.gm-style-iw-t::after {
+     content: "";
+     display: block;
+     position: absolute;
+     top: -8px;
+     left: -12px;
+     width: 18px;
+     height: 18px;
+     background-color: var(--white);
+     border-bottom: 5px solid var(--secondary);
+     border-left: 5px solid var(--secondary);
+     rotate: -45deg;
+     border-radius: 0 100vw 0 0;
+     z-index: 1;
+}
+
+.guides_map_marker p.h3{
+     padding-bottom: var(--spacesmall);
+}
+
+.gm-style .gm-style-iw-tc::after{
+     display: none;
+}
+// Maps Styles - END
+
+.accord_sec_wrap{
+     .block-button a.block-button__link{
+          width: 100%;
+          padding: var(--spacesmall) var(--spacereg);
+          text-align: left;
+          color: var(--primary);
+          background-color: var(--white);
+          border-top: 0;
+          border-bottom: 1px solid var(--primary);
+          border-left: none;
+          border-right: none;
+          border-radius: 0;
+          transition: all .25s ease-in-out;
+     }
+
+     .block-button a.block-button__link:hover,
+     .block-button a.block-button__link:focus{
+          color: var(--white);
+          background-color: var(--primary);
+          transition: all .25s ease-in-out;
+     }
+     
+     &:first-of-type .block-button a.block-button__link{
+          border-top: 1px solid var(--primary);
+     }
+
+     .guidesmap_dest{
+          padding: var(--spacereg);
+     }
+
+     .accord_btn{
+          position: sticky;
+          top: 0;
+     }
+
+     .accord_btn a{
+          display: grid;
+          grid-template-columns: auto 20px;
+          align-items: center;
+     }
+
+     .accord_btn .plus{
+          position: relative;
+          height: 20px;
+     }
+
+     .accord_btn .plus::before,
+     .accord_btn .plus::after{
+          display: block;
+          content: "";
+          position: absolute;
+          top: calc(50% - 1.5px);
+          right: calc(50% - 10px);
+          width: 20px;
+          height: 3px;
+          border-radius: 100vw;
+          background-color: var(--primary);
+     }
+
+     &.active .accord_btn a .plus::before,
+     &.active .accord_btn a .plus::after,
+     .accord_btn a:hover .plus::before,
+     .accord_btn a:focus .plus::before,
+     .accord_btn a:hover .plus::after,
+     .accord_btn a:focus .plus::after{
+          background-color: var(--white);
+     }
+
+     .accord_btn .plus::after{
+          rotate: 90deg;
+          transition: rotate .25s ease-in-out;
+     }
+
+     &.active .accord_btn a .plus::after{
+          rotate: 0deg;
+          transition: rotate .25s ease-in-out;
+     }
+}
+
+#guidesmap{
+     position: relative;
+     width: 100%;
+     height: var(--guides-max-height);
+     max-height: 1024px;
+}
+
+.rmv_pddng{
+     padding: 0;
+}
+
+.guidesmap_dest:not(:first-of-type){
+     border-top: 2px solid var(--tertiary);
+}
+
+.guidesmap_dest:hover, .guidesmap_dest:focus{
+     background-color: var(--tertiary);
+}

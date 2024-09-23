@@ -1,0 +1,155 @@
+/*  Tooltips */
+.tooltip_wrap {
+     position: relative;
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     padding: 0 !important;
+}
+
+button.tooltip_button,
+button.mobility_device_num_5 {
+     position: absolute;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 20px;
+     height: calc(20px);
+     bottom: 0;
+     padding: 0;
+     font-size: .01rem;
+     font-weight: 700;
+     color: #69A52B;
+     border-radius: 50%;
+     opacity: .75;
+     background-color: transparent;
+     background-image: url('../images/question_mark.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     border: none !important;
+}
+
+.tooltip_img {
+     width: 100%;
+     height: 100%;
+}
+
+button.mobility_device_num_5 {
+     position: relative;
+     display: inline-flex;
+}
+
+.block-group.tooltip_inner {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: fixed;
+     top: -150vh;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     font-size: 18px;
+     font-weight: 400;
+     background-color: rgba(0, 0, 0, .75);
+     transition: top .25s ease-out;
+     z-index: 500;
+}
+
+.fare_box .block-group.tooltip_inner p,
+.fare_box_best_value .block-group.tooltip_inner p,
+a .fare_box .block-group.tooltip_inner p,
+a .fare_box_best_value .block-group.tooltip_inner p {
+     text-align: left;
+     font-size: 18px;
+     font-weight: 400;
+}
+
+.block-group.tooltip_inner.tool_active {
+     top: 0vw;
+     z-index: 50000;
+     transition: top .25s ease-out;
+}
+
+.block-group.tooltip_inner>.block-group__inner-container {
+     position: relative;
+     display: block;
+     width: 90vw;
+     height: auto;
+     background-color: #e5e5e5;
+     padding: 18px;
+}
+
+.block-group.tooltip_inner>.block-group__inner-container button {
+     position: absolute;
+     top: 20px;
+     right: 10px;
+     width: 30px;
+     height: 30px;
+     padding: 0;
+     margin: 0;
+     background-color: transparent;
+     border: none;
+}
+
+.block-group.tooltip_inner>.block-group__inner-container button::before,
+.block-group.tooltip_inner>.block-group__inner-container button::after {
+     content: '';
+     display: block;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     width: 100%;
+     height: 5px;
+     transform: rotate(45deg);
+     background-color: #69A52B;
+}
+
+.block-group.tooltip_inner>.block-group__inner-container button::after {
+     transform: rotate(-45deg);
+}
+
+article .fare_box p .tooltip_centent strong,
+article .fare_box p .tooltip_centent span {
+     display: block;
+     font-size: 18px;
+     padding: 0 0 9px 0;
+}
+
+.fare_box,
+.fare_box_best_value {
+     background-color: var(--white);
+}
+
+.fare_box_best_value:hover {
+     box-shadow: 0px 8px 15px rgba(247, 127, 15, .25);
+}
+
+
+button.tooltip_close {
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     padding: var(--spacesmall);
+     width: 40px;
+     height: 40px
+}
+
+button.tooltip_close span::before,
+button.tooltip_close span::after {
+     position: absolute;
+     width: 30px;
+}
+
+p.comment-form-comment label {
+     font-weight: 600;
+}
+
+button.tooltip_close span::before,
+button.tooltip_close span::after {
+     position: absolute;
+     width: 30px;
+}
+
+p.comment-form-comment label {
+     font-weight: 600;
+}

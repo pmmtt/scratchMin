@@ -1,0 +1,342 @@
+.tab-group-wrapper {
+     width: 100%;
+     max-width: var(--max-width);
+     margin: 0 auto;
+
+     .single-tab-wrap {
+          overflow: hidden;
+
+          &>button {
+               position: relative;
+               width: 100%;
+               margin: 0 auto;
+               color: var(--black);
+               text-align: left;
+               background-color: transparent;
+               border: none;
+               border-bottom: 2px solid var(--secondary);
+               border-radius: 0;
+
+               span {
+                    font-weight: var(--fnt-wght-bold);
+               }
+
+               &:hover {
+                    color: var(--secondary);
+               }
+          }
+
+          &:first-of-type>button {
+               border-top: 2px solid var(--secondary);
+          }
+
+          .tab-content {
+               height: auto;
+               max-height: 0;
+               transition: max-height var(--primary-transition);
+               will-change: max-height;
+
+               &>div {
+                    width: calc(100% - (var(--spacereg) * 2));
+                    max-width: var(--max-width);
+                    margin: 0 auto;
+                    padding: 0;
+               }
+          }
+
+          &.active {
+               .tab-content {
+                    max-height: 150vh;
+                    transition: max-height var(--primary-transition);
+                    will-change: max-height;
+               }
+          }
+     }
+}
+
+.tab-group-wrapper.accordionWrap {
+     .single-tab-wrap {
+          &>button {
+               color: var(--white);
+               background-color: var(--secondary);
+               border: 2px solid var(--secondary);
+               margin: 0 0 2px 0;
+               transition: all var(--primary-transition);
+
+               &:hover,
+               &.focus {
+                    color: var(--secondary);
+                    background-color: var(--white);
+                    transition: all var(--primary-transition);
+                    ;
+               }
+
+               &::before,
+               &::after {
+                    content: '';
+                    position: absolute;
+                    top: calc(50%);
+                    right: var(--spacereg);
+                    width: 15px;
+                    height: 3px;
+                    background-color: var(--white);
+                    opacity: 1;
+                    transition: all var(--primary-transition);
+               }
+
+               &::after {
+                    transform: rotate(90deg);
+               }
+
+               &:hover::before,
+               &:hover::after {
+                    background-color: var(--secondary);
+                    transition: all var(--primary-transition);
+               }
+          }
+
+          &.active>button {
+               &::after {
+                    opacity: 0;
+                    transition: all var(--primary-transition);
+               }
+          }
+     }
+}
+
+// Special Cases
+.hero-block {
+     .tabWrap {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: 1fr;
+          justify-content: stretch;
+          position: relative;
+          height: 100%;
+          overflow: hidden;
+
+          .single-tbaccrd-wrap {
+               height: 100%;
+
+               &:first-of-type>button {
+                    border-top: none;
+               }
+
+               &>button {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 75px calc(115px - 75px);
+                    align-items: end;
+                    justify-items: center;
+                    width: 100%;
+                    height: 115px;
+                    padding: 0;
+                    border: none;
+
+                    & span {
+                         font-size: .75rem;
+                         line-height: 1;
+                         text-align: center;
+                         padding: 0 0 var(--spacesmall) 0;
+                         opacity: 0;
+                         transition: opacity var(--primary-transition);
+                    }
+
+                    &::after {
+                         content: '';
+                         position: absolute;
+                         bottom: 1px;
+                         left: 0;
+                         width: 100%;
+                         height: 2px;
+                         transition: all var(--primary-transition);
+                         background-color: var(--secondary);
+                    }
+
+                    &:hover::after {
+                         bottom: 0px;
+                         height: 4px;
+                         transition: all var(--primary-transition);
+                    }
+
+                    .tab_icon {
+                         display: grid;
+                         place-items: center;
+                         width: 60px;
+                         height: 60px;
+                         background-color: var(--primary);
+                         border: 10px solid var(--primary);
+                         border-radius: 50%;
+
+                         svg {
+                              display: block;
+                              width: auto;
+                              ;
+                              height: 80%;
+
+                              path {
+                                   fill: var(--white);
+                              }
+                         }
+                    }
+               }
+
+               &.active {
+                    &>button {
+                         span {
+                              opacity: 1;
+                              transition: opacity var(--primary-transition);
+                         }
+                    }
+               }
+
+               .tab-content {
+                    position: absolute;
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: calc(100% - 115px);
+                    max-height: fit-content;
+                    padding: var(--spacereg) 0;
+                    opacity: 0;
+                    z-index: -100;
+                    overflow: hidden;
+                    transition: opacity var(--fast-transition);
+
+                    .content_information {
+                         width: 100%;
+                         height: 100%;
+                         padding: 0;
+                         margin: 0;
+                    }
+               }
+
+               &.active {
+                    button {
+                         &::after {
+                              bottom: 0;
+                              height: 4px;
+                              transition: height var(--primary-transition);
+                         }
+                    }
+
+                    .tab-content {
+                         opacity: 1;
+                         z-index: 100;
+                         transition: opacity var(--fast-transition);
+                    }
+               }
+          }
+     }
+}
+// Special Cases - END
+
+@media only screen and (min-width: 880px) {
+     .tabWrap {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(auto, 25ch));
+          grid-template-rows: 1fr;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+          transition: height var(--primary-transition);
+          will-change: height;
+
+          .single-tab-wrap {
+               overflow: hidden;
+
+               &>button {
+                    height: 60px;
+                    padding: 0;
+                    text-align: center;
+                    line-height: 1.25;
+                    border: none;
+                    overflow-y: visible;
+
+                    &::after {
+                         content: '';
+                         position: absolute;
+                         bottom: 1px;
+                         left: 0;
+                         width: 100%;
+                         height: 2px;
+                         transition: all var(--primary-transition);
+                         background-color: var(--secondary);
+                    }
+
+                    &:hover::after {
+                         bottom: 0px;
+                         height: 4px;
+                         transition: all var(--primary-transition);
+                    }
+               }
+
+               &:first-of-type>button {
+                    border-top: none;
+               }
+
+               .tab-content {
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    width: 100%;
+                    height: auto;
+                    padding: var(--spacereg) 0;
+                    max-height: fit-content;
+                    opacity: 0;
+                    z-index: -100;
+                    transition: opacity var(--fast-transition);
+               }
+
+               &.active {
+                    button {
+                         &::after {
+                              bottom: 0;
+                              height: 4px;
+                              transition: height var(--primary-transition);
+                         }
+                    }
+
+                    .tab-content {
+                         opacity: 1;
+                         z-index: 100;
+                         transition: opacity var(--fast-transition);
+                    }
+               }
+
+               &:last-of-type button {
+                    border-top: none;
+               }
+          }
+     }
+
+     .tab-group-wrapper.accordionWrap {
+          .tab-content {
+
+               &>div,
+               &>.block-group {
+                    padding: var(--spacereg) 0 !important;
+               }
+          }
+     }
+
+     .hero-block{
+          .tabWrap{
+               .single-tbaccrd-wrap{
+                    & > button{
+                         .tab_icon{
+                              width: 75px;
+                              height: 75px;
+                         }
+
+                         span{
+                              padding: var(--spacesmall) 0;
+                              font-size: 1rem;
+                              opacity: 1;
+                         }
+                    }
+               }
+          }
+     }
+}

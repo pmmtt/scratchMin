@@ -1,0 +1,68 @@
+:root {
+     --black: #000;
+     --white: #fff;
+     --primary: #005aa8;
+     --secondary: #69a52b;
+     --tertiary: #e6f3ff;
+     --alerts: #F77E0F;
+
+     --secondary-fifty: rgba(105, 165, 43, .5);
+     --tertiary-ninety: rgba(230, 243, 255, 0.9);
+     --white-fifty: rgba(255, 255, 255, .5);
+
+     --black-fifty: rgba(0, 0, 0, .50);
+
+     --primary-shadow: 0 4px 8px rgba(0, 90, 168, .25);
+     --secondary-shadow: 0 4px 8px rgba(105, 165, 43, .25);
+
+     --overlay-gradiant: linear-gradient(90deg,rgb(47,45,47) 0%,rgba(47,45,47,0.84) 45%);
+     --overlay-solid: rgba(0, 0, 0, .65);
+     --background-modal: rgba(255, 255, 255, .75);
+     
+     /* Fonts */
+     --font-family: 'Source Sans Pro', serif;
+
+     --fnt-wght-reg: 400;
+     --fnt-wght-bold: 600;
+     --fnt-wght-black: 700;
+
+     --header_one: var(--fnt-wght-black) 2.25rem/calc(2.25rem + 0.125rem) var(--font-family);
+     --header_two: var(--fnt-wght-black) 1.85rem/calc(1.85rem + 0.125rem) var(--font-family);
+     --header_three: var(--fnt-wght-black) 1.5rem/calc(1.5rem + 0.125rem) var(--font-family);
+     --header_four: var(--fnt-wght-reg) 1.4rem/calc(1.4rem + 0.125rem) var(--font-family);
+     --header_five: var(--fnt-wght-reg) 1.3rem/calc(1.3rem + 0.125rem) var(--font-family);
+     --header_six: var(--fnt-wght-reg) 1.2rem/calc(1.2rem + 0.125rem) var(--font-family);
+
+     --body-reg: var(--fnt-wght-reg) 18px/calc(1rem + 0.125rem) var(--font-family);
+     /* Fonts - END */
+
+     /* Spaceing */
+     --width: 95vw;
+     --max-width: 1440px;
+     --max-content-width: calc(((var(--max-width) / 12) + (var(--spacereg) / 2.5)) * 8);
+
+     --spacereg: 18px;
+     --spacexl: calc(var(--spacereg) * 3);
+     --spacelarge: calc(var(--spacereg) * 2);
+     --spacesmall: calc(var(--spacereg) / 2);
+     --spaceexsmall: calc(var(--spacereg) / 4);
+     --spacegrid: calc(var(--max-width) / 12);
+
+     --content-padding: calc(var(--width) / 12);
+     --max-content-padding: calc(var(--max-width) / 12);
+     /* Spaceing - END */
+
+     /* Extras */
+     --primary-transition: .5s ease-in-out;
+     --fast-transition: .25s ease-in-out;
+     --border-radius: 4px;
+     /* Extras - END */
+
+     /* Transitions */
+     --fast-transition: .25s ease-in-out;
+     --reg-transition: .5s ease-in-out;
+     --slow-transition: 1s ease-in-out;
+
+     --button-hover: 0 3px 3px 0;
+     /* Transitions - END */
+}

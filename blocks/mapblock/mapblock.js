@@ -6,7 +6,7 @@ registerBlockType('celtisorg/googlemap', {
      title: 'Celtis Google Map',
      icon: 'location',
      category: 'common',
-     parent: 'omnifseupdt/guidesdestsec',
+     parent: 'celorgscratch/guidesdestsec',
      attributes: {
           apiKey: {
                type: 'string',

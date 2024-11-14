@@ -117,7 +117,7 @@ article .fare_box p .tooltip_centent span {
 
 .fare_box,
 .fare_box_best_value {
-     background-color: var(--white);
+     background-color: $white;
 }
 
 .fare_box_best_value:hover {
@@ -129,7 +129,7 @@ button.tooltip_close {
      position: absolute;
      top: 20px;
      right: 20px;
-     padding: var(--spacesmall);
+     padding: $spacesmall;
      width: 40px;
      height: 40px
 }

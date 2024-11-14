@@ -3,720 +3,95 @@
      top: 0;
      left: 0;
      width: 100vw;
-     height: auto;
-     background-color: var(--white);
-     box-shadow: 0px 8px 15px rgba(0, 90, 136, .25);
-     z-index: 800;
+     background-color: $white;
+     z-index: 1000;
 
-     #masthead {
+     .site-header {
+          position: relative;
+          width: 100%;
           height: auto;
           max-height: 50px;
+          margin: 0 auto;
           overflow: hidden;
-          transition: all 0.25s ease-out;
+          transition: $primary-transition;
 
           &.active {
-               height: auto;
-               max-height: 100vh;
-               transition: all 0.25s ease-out;
+               max-height: 100vh; // No need to repeat transition unless it's different
           }
      }
 
-     .mainhead_wrap {
-          max-width: var(--max-width);
-          margin: 0 auto;
-
-          .site-branding {
-               display: grid;
-               align-items: center;
-               width: 100%;
-               height: 50px;
-               padding: 9px var(--spacereg);
-
-               .omni_logo_wrap {
-                    display: flex;
-                    align-items: center;
-                    width: calc(100% - 30px);
-                    height: 30px;
-
-                    a {
-                         display: block;
-                         width: auto;
-                         height: 100%;
-
-                         &::after {
-                              background-color: transparent;
-                         }
-
-                         svg {
-                              width: auto;
-                              height: 100%;
-                         }
-                    }
-               }
-          }
-     }
-}
-
-// Main Navigation
-#site-navigation {
-     width: 100vw;
-     height: auto;
-     max-height: 100vh;
-     margin: 0 auto;
-     overflow-x: hidden;
-     overflow-y: scroll;
-     transition: all 0.25s ease-out;
-     z-index: 9500;
-
-     .menu-main-navigation-container {
-          height: 100%;
-     }
-
-     &.active {
-          height: calc((100vh - 15vw) - var(--spacereg));
-          transition: all 0.25s ease-out;
-     }
-
-     #primary-menu {
-          height: 100%;
-          margin: 0 var(--spacereg);
-          overflow-x: hidden;
-          overflow-y: scroll;
-
-          &>li {
-               display: grid;
-               grid-template-columns: 1fr;
-               grid-template-rows: 50px auto;
-               justify-content: center;
-               flex-direction: column;
-               width: 100%;
-               margin: 0 auto;
-               list-style: none;
-
-               &>a {
-                    display: grid;
-                    align-items: end;
-                    position: relative;
-                    font: var(--header_four);
-                    text-transform: uppercase;
-               }
-
-               a {
-                    display: grid;
-                    width: fit-content;
-                    color: var(--black);
-                    padding: 0 0 calc(var(--spacesmall) / 2) 0;
-                    font-weight: var(--fnt-wght-bold);
-
-                    &:hover {
-                         text-decoration: none;
-                    }
-
-                    span {
-                         font-weight: var(--fnt-wght-bold);
-                    }
-               }
-
-               .sub-menu{
-                    a[href="#"] {
-                         display: none;
-                    }
-               }
-          }
-
-          &>.menu-item-has-children {
-               &>a.actv_brdr::after,
-               .current-menu-item>a::after,
-               .current_page_parent>a::after {
-                    width: 100%;
-                    left: 0;
-               }
-
-               &>.sub-menu {
-                    height: auto;
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: all 0.5s ease-out;
-
-                    &.active {
-                         max-height: 100vh;
-                         transition: all 0.75s ease-out;
-                    }
-
-                    &>li {
-                         padding: 0 var(--spacesmall) 0 var(--spacereg);
-                         margin: var(--spacereg) 0 0 0;
-                         list-style: none;
-
-                         &>ul>li {
-                              padding: 0 var(--spacesmall) 0 0;
-                              margin: var(--spacereg) 0 0 0;
-                              list-style: none;
-                         }
-
-                         &:last-of-type {
-                              margin: var(--spacereg) 0;
-                         }
-
-                         a {
-
-                              svg,
-                              .bckgnd_crcl,
-                              img {
-                                   display: none;
-                              }
-                         }
-                    }
-               }
-          }
-
-          a{
-               position: relative;
-
-               &::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    width: 0;
-                    height: 3px;
-                    background-color: var(--secondary);
-                    transition: width 0.25s ease-out, left 0.25s ease-out;
-               }
-     
-               &:hover::after {
-                    width: 100%;
-                    transition: width 0.25s ease-out, left 0.25s ease-out;
-               }
-
-               .h3{
-                    padding: 0;
-               }
-          }
-     }
-
-     /* Head fare box */
-     a table {
-          display: none;
-          width: 100%;
-          border: 2px solid var(--secondary);
-
-          * {
-               display: block;
-          }
-
-          tr {
-               display: grid;
-               grid-template-rows: 75px;
-               grid-template-columns: 110px repeat(3, 1fr);
-
-               th,
-               td {
-                    display: grid;
-                    place-content: center;
-
-                    span {
-                         text-align: center;
-                    }
-               }
-          }
-
-          thead {
-               background-color: var(--secondary-fifty);
-               border-bottom: 4px solid var(--secondary);
-
-               tr {
-                    grid-template-columns: 110px 3fr;
-
-                    th {
-                         font-weight: var(--fnt-wght-bold);
-                    }
-               }
-          }
-     }
-}
-
-/* Main Nav Button */
-.menu-toggle {
-     display: grid;
-     grid-template-columns: 30px;
-     grid-template-rows: 20px 0;
-     align-content: center;
-     justify-content: center;
-     position: absolute;
-     width: 48px;
-     aspect-ratio: 1/1;
-     right: 0;
-     background-color: var(--white);
-     border: none;
-     outline: none;
-
-     &:hover,
-     &:focus,
-     &:active {
-          border: none;
-          outline: none;
-     }
-
-     .btn_txt {
-          height: 0;
-          overflow: hidden;
-          opacity: 0;
-     }
-
-     .burger_wrap {
-          display: block;
-          position: relative;
-          width: 30px;
-          height: 30px;
-          max-height: 20px;
-          transition: all 0.25s ease-in-out;
-
-          >* {
-               display: block;
-          }
-
-          .center_line {
-               position: absolute;
-               top: calc(50% - 1.5px);
-               left: 0;
-               width: 29.7px;
-               height: 3px;
-               background-color: var(--black);
-               border-radius: 100vw;
-               opacity: 1;
-               transform: opacity 0.5s ease-out 0.5s;
-          }
-
-          &::before,
-          &::after {
-               content: "";
-               position: absolute;
-               left: 0;
-               width: 29.7px;
-               height: 3px;
-               background-color: var(--black);
-               border-radius: 100vw;
-          }
-
-          &::before {
-               top: 0;
-               transform: rotate(0deg);
-               transition: top 0.5s ease-out 0.5s, transform 0.5s ease-out;
-          }
-
-          &::after {
-               bottom: 0;
-               transform: rotate(0deg);
-               transition: bottom 0.5s ease-out 0.5s, transform 0.5s ease-out;
-          }
-     }
-
-     &.active {
-          max-height: 30px;
-          transition: all 0.25s ease-in-out;
-
-          .burger_wrap {
-               .center_line {
-                    opacity: 0;
-                    transform: opacity 0.5s ease-out 0.5s;
-               }
-
-               &::before {
-                    top: calc(50% - 1.5px);
-                    transform: rotate(45deg);
-                    transition: top 0.5s ease-out, transform 0.5s ease-out 0.5s;
-               }
-
-               &::after {
-                    bottom: calc(50% - 2.5px);
-                    transform: rotate(-45deg);
-                    transition: bottom 0.5s ease-out, transform 0.5s ease-out 0.5s;
-               }
-          }
-
-          .btn_txt {
-               opacity: 0;
-          }
-     }
-}
-
-// Tools Nav
-/*--------------------------------------------------------------
-# Trip Lanner Nav
---------------------------------------------------------------*/
-.trp_pnr_nv_wrap {
-     display: flex;
-     flex-direction: column-reverse;
-     position: relative;
-     width: 100vw;
-     background-color: var(--tertiary);
-     border-bottom: 10px solid var(--primary);
-     z-index: 10500;
-
-     nav {
-          width: 100%;
-          max-width: var(--max-width);
-          height: auto;
-          max-height: 0;
-          margin: 0 auto;
-          overflow: hidden;
-          transition: all .25s ease-out;
-          container-type: inline-size;
+     .site-branding {
+          width: 50px;
+          margin: 0;
 
           a {
                display: grid;
-               grid-template-columns: 40px max-content;
-               grid-template-rows: 75px;
                align-items: center;
-               gap: var(--spacereg);
-               font-size: 18px;
-               padding: 18px;
-
-               &:hover {
-                    background-color: var(--white);
-               }
-
-               span {
-                    font: var(--header_five);
-                    font-weight: var(--fnt-wght-bold);
-                    color: var(--black);
-               }
-
-               span::after {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 0;
-                    height: 2px;
-                    margin: 0 0 -5px 0;
-                    background-color: #69A52B;
-                    transition: width .25s ease-out;
-               }
+               justify-content: center;
+               width: 48px;
+               height: 48px;
           }
-
-          @container (min-width: 650px) {
-               ul{
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    grid-template-rows: 1fr;
-
-                    a{
-                         grid-template-columns: 1fr;
-                         grid-template-rows: 50px auto;
-                         justify-items: center;
-                         align-items: start;
-                         position: relative;
-                         height: 100%;
-
-                         svg{
-                              width: auto;
-                              height: 100%;
-                         }
-
-                         span{
-                              text-align: center;
-                         }
-                    }
-               }
-          }
-     }
-
-     &.active {
-          .trip_plan_menu {
-               max-height: 100vh;
-               transition: all .25s ease-out;
-          }
-     }
-}
-
-.trppln_navtxt {
-     position: relative;
-}
-
-.trip_plan_menu a:hover .trppln_navtxt::after {
-     width: 100%;
-     transition: width .25s ease-out;
-}
-
-.trp_pnr_nv_wrap {
-     button {
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-template-rows: 15px 10px;
-          align-content: center;
-          justify-items: center;
-          flex-direction: column;
-          position: absolute;
-          bottom: auto;
-          right: 50px;
-          background-color: var(--primary);
-          width: 50px;
-          height: 50px;
-          transition: top 0.25s ease-out, bottom 0.25s ease-out;
-          bottom: 0;
-          border: none;
-          gap: 15px;
 
           svg {
                display: block;
-               width: auto;
-               height: 25px;
-               top: 0;
-               padding-bottom: 0 !important;
-               transition: top 0.5s ease-out;
+               width: 40px;
+               height: 40px;
 
-               path {
-                    fill: var(--white);
+               .logo-icon {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    transform: scale(3.5) translateY(-70px); // Ensure the transform doesn't cause layout issues
                }
-          }
 
-          span {
-               color: var(--white);
-               text-transform: uppercase;
-               width: auto;
-               font-size: 10px;
-               text-align: center;
-               line-height: 1;
+               .logo-text {
+                    display: none;
+               }
           }
      }
 
-     &.active {
-          button {
-               bottom: -55px;
-               border-radius: 0 0 5px 5px;
-               transition: top 0.25s ease-out, bottom 0.25s ease-out;
+     ul{
+          padding: 0;
+
+          a{
+               text-decoration: none;
           }
      }
 }
 
-// Tools Nav - END
-
-/* Responsive */
-@media only screen and (min-width: 1100px) {
-     #masthead {
-          width: 95vw;
-          height: 395px;
-          max-height: 135px;
-          margin: 0 auto;
-          overflow: hidden;
-          transition: all 0.5s ease-in-out;
-
-          &.active {
-               max-height: 395px;
-               transition: all 0.5s ease-in-out;
-          }
-
-          .mainhead_wrap {
+@media (min-width: 1024px) {
+     .head_wrapper {
+          .site-header {
                display: grid;
-               grid-template-columns: 230px calc(100% - 230px);
-               grid-template-rows: 1fr;
+               grid-template-columns: 200px auto 200px;
                align-items: center;
-               position: relative;
-               width: 100%;
-               height: 135px;
+               gap: $spacereg;
+               width: $width;
+               max-width: $max-width;
+               height: 125px;
+               max-height: none;
                margin: 0 auto;
-               padding: var(--spacereg) 0;
+               padding: 0;
+               overflow: visible;
 
                .site-branding {
-                    width: auto;
-                    height: auto;
-                    padding: 0;
-
-                    .omni_logo_wrap {
+                    &, a {
+                         width: auto;
                          height: auto;
-
-                         a {
-                              height: auto;
-
-                              svg {
-                                   width: 230px;
-                              }
-                         }
                     }
-               }
-
-               #site-navigation {
-                    width: auto;
-                    height: auto;
-                    margin: 0;
-
-                    #primary-menu {
-                         display: grid;
-                         grid-template-columns: repeat(auto-fit, minmax(50px, auto));
-                         gap: var(--spacelarge);
-                         justify-content: end;
-                         margin: 0;
-
-                         a {
-                              padding: calc(var(--spacesmall) / 2) 0;
-                         }
-
-                         &>li {
-                              grid-template-rows: auto;
-                              width: auto;
-                              margin: 0;
-
-                              &>.sub-menu {
-                                   display: grid;
-                                   grid-template-columns: repeat(auto-fit, minmax(50px, auto));
-                                   gap: var(--spacelarge);
-                                   place-items: center;
-                                   place-content: center;
-                                   position: absolute;
-                                   top: 100px;
-                                   left: 0;
-                                   width: 95vw;
-                                   max-width: var(--max-width);
-                                   height: calc(395px - 100px);
-                                   max-height: unset;
-                                   opacity: 0;
-                                   z-index: -100;
-                                   transition: opacity var(--reg-transition);
-
-                                   &.active {
-                                        opacity: 1;
-                                        z-index: 100;
-                                        transition: opacity var(--reg-transition);
-                                   }
-
-                                   &:has(table) {
-                                        grid-template-columns: 375px repeat(auto-fit, minmax(50px, auto));
-                                        box-shadow: none;
-                                        transition: box-shadow var(--fast-transition);
-
-                                        &>li {
-                                             padding: 0;
-                                        }
-
-                                        & li:has(table) {
-                                             width: 100%;
-
-                                             a {
-                                                  display: block;
-                                                  width: 100%;
-                                                  padding: 0;
-
-                                                  &::after {
-                                                       display: none;
-                                                  }
-                                             }
-
-                                             table {
-                                                  display: block;
-                                             }
-
-                                             &:hover,
-                                             &:focus {
-                                                  box-shadow: var(--secondary-shadow);
-                                                  transition: box-shadow var(--fast-transition);
-                                             }
-
-                                             &::after {
-                                                  display: none;
-                                             }
-                                        }
-
-                                   }
-
-                                   &>li {
-                                        margin: 0;
-                                        padding: 0;
-
-                                        a {
-                                             padding: calc(var(--spacesmall) / 2) 0;
-                                        }
-
-                                        .sub-menu {
-                                             display: grid;
-                                             gap: var(--spacereg);
-
-                                             li {
-                                                  margin: 0;
-                                             }
-                                        }
-                                   }
-
-                                   li {
-                                        &[href="#"] {
-                                             display: none;
-                                        }
-
-                                        &:has(svg) {
-                                             display: grid;
-                                             grid-template-columns: 1fr;
-                                             grid-template-rows: auto;
-                                             margin: 0;
-
-                                             a {
-                                                  display: grid;
-                                                  grid-template-columns: 1fr;
-                                                  grid-template-rows: 75px auto;
-                                                  justify-items: center;
-
-                                                  svg {
-                                                       display: block;
-                                                       width: 75px;
-                                                       height: 75px;
-                                                  }
-
-                                                  span {
-                                                       text-align: center;
-                                                  }
-                                             }
-                                        }
-                                   }
-                              }
-                         }
-                    }
-               }
-          }
-     }
-
-     .menu-toggle,
-     .fare_text,
-     .fares_nav_mobile {
-          display: none;
-     }
-
-     .trp_pnr_nv_wrap {
-          div {
-               position: relative;
-               width: 95vw;
-               max-width: var(--max-width);
-               margin: 0 auto;
-
-               button {
-                    display: grid;
-                    grid-template-columns: 20px auto;
-                    grid-template-rows: 1fr;
-                    position: absolute;
-                    top: auto;
-                    bottom: -45px;
-                    right: 0;
-                    width: 108px;
-                    padding: 9px;
-                    border-radius: 0 0 9px 9px;
-                    border: none;
-                    height: auto;
 
                     svg {
+                         width: 100%;
                          height: auto;
-                    }
 
-                    span {
-                         display: grid;
-                         align-items: center;
-                         font-size: 18px;
-                         font-weight: var(--fnt-wght-bold);
-                    }
-               }
-          }
+                         .logo-icon {
+                              transform: scale(1) translateY(0);
+                         }
 
-          &.active {
-               button {
-                    bottom: -45px;
+                         .logo-text {
+                              display: block;
+                         }
+                    }
                }
           }
      }

@@ -4,16 +4,16 @@
      left: 0;
      width: 100vw;
      height: 100vh;
-     background-color: var(--white);
+     background-color: $white;
      z-index: -1;
      opacity: .25;
 
      &>div {
           display: grid;
           grid-template-columns: repeat(12, 1fr);
-          gap: var(--spacereg);
-          width: var(--width);
-          max-width: var(--max-width);
+          gap: $spacereg;
+          width: $width;
+          max-width: $max-width;
           height: 100vh;
           margin: 0 auto;
           border: 2px solid purple;
@@ -29,21 +29,21 @@
      position: fixed;
      top: 200px;
      left: 0;
-     width: calc((100vw - var(--width)) / 2);
+     width: calc((100vw - $width) / 2);
      height: 100px;
      background-color: hotpink;
      opacity: .75;
      container-type: inline-size;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1024px) {
      .space_tester {
-          width:  calc(var(--width) / 9);
+          width:  calc($width / 10);
      }
 }
 
 @media only screen and (min-width: 1440px) {
      .space_tester {
-          width: calc(((100vw - var(--max-width)) / 2) + (var(--spacegrid) + 3px));
+          width: calc(((100vw - $max-width) / 2) + ($spacegrid + 3px));
      }
 }

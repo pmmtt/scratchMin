@@ -4,16 +4,16 @@ import { select, subscribe } from '@wordpress/data';
 import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 
 let blockLimit = 8;
-let blockName = 'omnifseupdt/gridcard';
+let blockName = 'celorgscratch/gridcard';
 
-registerBlockType('omnifseupdt/cardgrid', {
-     title: 'Card Grid',
+registerBlockType('celorgscratch/cardgrid', {
+     title: 'Cards',
      icon: 'grid-view',
      category: 'layout',
      attributes: {
-          gridType1: {
+          imageCards: {
                type: 'string',
-               default: 'quick-links', // Set default to 'quick-links'
+               default: 'image-quick-links', // Set default to 'image-quick-links'
           },
           gridType2: {
                type: 'string',
@@ -30,7 +30,7 @@ registerBlockType('omnifseupdt/cardgrid', {
      edit: function (props) {
           let blockClientId = props.clientId;
           let { attributes, setAttributes } = props;
-          let { gridType1, gridType2 } = attributes;
+          let { imageCards, gridType2 } = attributes;
 
           subscribe(() => {
                let innerBlocks = select('core/block-editor').getBlocks(blockClientId);
@@ -49,40 +49,44 @@ registerBlockType('omnifseupdt/cardgrid', {
                     <BlockControls>
                          <ToolbarGroup>
                               <ToolbarButton
-                                   className={gridType1 === 'quick-links' ? 'is-active' : ''}
-                                   onClick={() => setAttributes({ gridType1: 'quick-links' })}
+                                   style={{
+                                        backgroundColor: imageCards === 'portrait-card-links' ? 'black' : 'transparent',
+                                        color: imageCards === 'portrait-card-links' ? 'white' : 'inherit',
+                                   }}
+                                   onClick={() => setAttributes({ imageCards: 'portrait-card-links' })}
                               >
-                                   Quick Links
+                                   Portrait Card
                               </ToolbarButton>
                               <ToolbarButton
-                                   className={gridType1 === 'link-grid' ? 'is-active' : ''}
-                                   onClick={() => setAttributes({ gridType1: 'link-grid' })}
+                                   style={{
+                                        backgroundColor: imageCards === 'image-quick-links' ? 'black' : 'transparent',
+                                        color: imageCards === 'image-quick-links' ? 'white' : 'inherit',
+                                   }}
+                                   onClick={() => setAttributes({ imageCards: 'image-quick-links' })}
                               >
-                                   Link Grid
+                                   Image Quick Links
                               </ToolbarButton>
                               <ToolbarButton
-                                   className={gridType1 === 'icon-grid' ? 'is-active' : ''}
-                                   onClick={() => setAttributes({ gridType1: 'icon-grid' })}
+                                   style={{
+                                        backgroundColor: imageCards === 'grid-width-card' ? 'black' : 'transparent',
+                                        color: imageCards === 'grid-width-card' ? 'white' : 'inherit',
+                                   }}
+                                   onClick={() => setAttributes({ imageCards: 'grid-width-card' })}
                               >
-                                   Icon Grid
-                              </ToolbarButton>
-                         </ToolbarGroup>
-                         <ToolbarGroup>
-                              <ToolbarButton
-                                   className={gridType2 === 'add-sub-head' ? 'is-active' : ''}
-                                   onClick={() => setAttributes({ gridType2: 'add-sub-head' })}
-                              >
-                                   Add block description
+                                   Hero Card
                               </ToolbarButton>
                               <ToolbarButton
-                                   className={gridType2 === 'rmv-sub-head' ? 'is-active' : ''}
-                                   onClick={() => setAttributes({ gridType2: 'rmv-sub-head' })}
+                                   style={{
+                                        backgroundColor: imageCards === 'carousel-card' ? 'black' : 'transparent',
+                                        color: imageCards === 'carousel-card' ? 'white' : 'inherit',
+                                   }}
+                                   onClick={() => setAttributes({ imageCards: 'carousel-card' })}
                               >
-                                   Remove block description
+                                   Hero Carousel Card
                               </ToolbarButton>
                          </ToolbarGroup>
                     </BlockControls>
-                    <section className={`card_grid ${gridType1} ${gridType2}`}>
+                    <section className={`card_grid ${imageCards} ${gridType2}`}>
                          <InnerBlocks
                               className={['card_grid']}
                               allowedBlocks={[blockName]}
@@ -96,11 +100,10 @@ registerBlockType('omnifseupdt/cardgrid', {
           );
      },
      save: function (props) {
-          let { gridType1 } = props.attributes;
-          let { gridType2 } = props.attributes;
+          let { imageCards } = props.attributes;
 
           return (
-               <section className={`card_grid ${gridType1} ${gridType2}`}>
+               <section className={`card_grid ${imageCards}`}>
                     <InnerBlocks.Content />
                </section>
           );

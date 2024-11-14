@@ -5,7 +5,7 @@ import { PanelBody, SelectControl, Button } from '@wordpress/components';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { useState } from '@wordpress/element';
 
-registerBlockType('omnifseupdt/promocard', {
+registerBlockType('celorgscratch/promocard', {
      title: __('Promo Card', 'textdomain'),
      icon: 'index-card',
      category: 'common',
@@ -80,7 +80,7 @@ registerBlockType('omnifseupdt/promocard', {
                                    options={[
                                         { label: 'Post', value: 'post' },
                                         { label: 'Page', value: 'page' },
-                                        { label: 'Promotions', value: 'omni_promos' },
+                                        { label: 'Promotions', value: 'scratch_promos' },
                                         { label: 'Routes', value: 'route' },
                                         { label: 'GoSmart', value: 'go_smart' },
                                    ]}

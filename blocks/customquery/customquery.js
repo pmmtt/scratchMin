@@ -6,7 +6,7 @@
      var RangeControl = components.RangeControl;
      var ToggleControl = components.ToggleControl;
 
-     registerBlockType('omnifseupdt/posts-display', {
+     registerBlockType('celorgscratch/posts-display', {
           title: 'Posts Display',
           icon: 'admin-post',
           category: 'widgets',

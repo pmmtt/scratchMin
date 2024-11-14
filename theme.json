@@ -44,26 +44,22 @@
           "color": {
                "defaultPalette": false,
                "defaultGradients": false,
+               "custom": false,
                "palette": [
                     {
                          "slug": "primary",
-                         "color": "#005aa8",
+                         "color": "#174F84",
                          "name": "Primary"
                     },
                     {
                          "slug": "secondary",
-                         "color": "#69a52b",
+                         "color": "#0A7BBE",
                          "name": "Secondary"
                     },
                     {
                          "slug": "tertiary",
-                         "color": "#e6f3ff",
+                         "color": "#FEC000",
                          "name": "Tertiary"
-                    },
-                    {
-                         "slug": "alerts",
-                         "color": "#F77E0F",
-                         "name": "Alerts"
                     },
                     {
                          "slug": "defwhite",
@@ -72,30 +68,26 @@
                     },
                     {
                          "slug": "defblack",
-                         "color": "#000000",
+                         "color": "#313133",
                          "name": "Black"
+                    },
+                    {
+                         "slug": "defgray",
+                         "color": "#EBEBEB",
+                         "name": "Grey"
                     }
                ],
+               "text": false,
                "gradients": [
                     {
-                         "name": "Blue Gradient Overlay",
-                         "slug": "primary-gradient-overlay",
-                         "gradient": "linear-gradient(90deg, rgba(0, 90, 168, 1) 0%, rgba(0, 90, 168, 1) 25%, rgba(0, 90, 168, 0) 100%)"
+                         "name": "Blue Gradient",
+                         "slug": "primary",
+                         "gradient": "linear-gradient(180deg, rgba(194, 222, 239, 0.05) 0%, rgba(10, 123, 190, 0.50) 54%, rgba(194, 222, 239, 0.05) 100%)"
                     },
                     {
-                         "name": "Green Gradient Overlay",
-                         "slug": "secondary-gradient-overlay",
-                         "gradient": "linear-gradient(90deg, rgba(105, 165, 43, 1) 0%, rgba(105, 165, 43, 1) 25%, rgba(105, 165, 43, 0) 100%)"
-                    },
-                    {
-                         "name": "Light blue Gradient Overlay",
-                         "slug": "tertiary-gradient-overlay",
-                         "gradient": "linear-gradient(90deg, rgba(230, 243, 255, 1) 0%, rgba(230, 243, 255, 1) 25%, rgba(230, 243, 255, 0) 100%)"
-                    },
-                    {
-                         "name": "Orange Gradient Overlay",
-                         "slug": "alerts-gradient-overlay",
-                         "gradient": "linear-gradient(90deg, rgba(247, 126, 15, 1) 0%, rgba(247, 126, 15, 1) 25%, rgba(247, 126, 15, 0) 100%)"
+                         "name": "Yellow Gradient",
+                         "slug": "secondary",
+                         "gradient": "linear-gradient(180deg, rgba(255, 239, 191, 0.00) 0%, rgba(255, 223, 128, 0.50) 50%, rgba(254, 192, 0, 0.00) 100%)"
                     }
                ]
           },
@@ -104,45 +96,35 @@
                     {
                          "name": "Headline 1",
                          "slug": "h1",
-                         "size": "36px"
+                         "size": "80px"
                     },
                     {
                          "name": "Headline 2",
                          "slug": "h2",
-                         "size": "30px"
+                         "size": "48px"
                     },
                     {
                          "name": "Headline 3",
                          "slug": "h3",
-                         "size": "28px"
+                         "size": "36px"
                     },
                     {
-                         "name": "Headline 4",
+                         "name": "Title",
                          "slug": "h4",
                          "size": "24px"
                     },
                     {
-                         "name": "Headline 5",
+                         "name": "Subtitle",
                          "slug": "h5",
-                         "size": "21px"
-                    },
-                    {
-                         "name": "Headline 6",
-                         "slug": "h6",
-                         "size": "18px"
-                    },
-                    {
-                         "name": "Subhead/Callout",
-                         "slug": "intro-callout",
-                         "size": "21px"
+                         "size": "20px"
                     },
                     {
                          "name": "Paragraph",
                          "slug": "paragraph",
-                         "size": "18px"
+                         "size": "20px"
                     },
                     {
-                         "name": "Small",
+                         "name": "Button/Caption",
                          "slug": "small",
                          "size": "16px"
                     }
@@ -152,7 +134,7 @@
                "contentSize": "1440px"
           },
           "custom": {
-            "templateParts": "header"
+               "templateParts": "header"
           }
      }
 }

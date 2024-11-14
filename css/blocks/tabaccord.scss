@@ -1,341 +1,150 @@
-.tab-group-wrapper {
-     width: 100%;
-     max-width: var(--max-width);
-     margin: 0 auto;
+.tab-accord-wrap{
+     width: $width;
+     max-width: $max-width;
+     margin: 0 auto $spacelarge auto;
+     container-type: inline-size;
 
-     .single-tab-wrap {
-          overflow: hidden;
-
-          &>button {
-               position: relative;
-               width: 100%;
-               margin: 0 auto;
-               color: var(--black);
-               text-align: left;
-               background-color: transparent;
-               border: none;
-               border-bottom: 2px solid var(--secondary);
-               border-radius: 0;
-
-               span {
-                    font-weight: var(--fnt-wght-bold);
-               }
-
-               &:hover {
-                    color: var(--secondary);
-               }
-          }
-
-          &:first-of-type>button {
-               border-top: 2px solid var(--secondary);
-          }
-
-          .tab-content {
-               height: auto;
-               max-height: 0;
-               transition: max-height var(--primary-transition);
-               will-change: max-height;
-
-               &>div {
-                    width: calc(100% - (var(--spacereg) * 2));
-                    max-width: var(--max-width);
-                    margin: 0 auto;
-                    padding: 0;
-               }
-          }
-
-          &.active {
-               .tab-content {
-                    max-height: 150vh;
-                    transition: max-height var(--primary-transition);
-                    will-change: max-height;
-               }
-          }
-     }
-}
-
-.tab-group-wrapper.accordionWrap {
-     .single-tab-wrap {
-          &>button {
-               color: var(--white);
-               background-color: var(--secondary);
-               border: 2px solid var(--secondary);
-               margin: 0 0 2px 0;
-               transition: all var(--primary-transition);
-
-               &:hover,
-               &.focus {
-                    color: var(--secondary);
-                    background-color: var(--white);
-                    transition: all var(--primary-transition);
-                    ;
-               }
-
-               &::before,
-               &::after {
-                    content: '';
-                    position: absolute;
-                    top: calc(50%);
-                    right: var(--spacereg);
-                    width: 15px;
-                    height: 3px;
-                    background-color: var(--white);
-                    opacity: 1;
-                    transition: all var(--primary-transition);
-               }
-
-               &::after {
-                    transform: rotate(90deg);
-               }
-
-               &:hover::before,
-               &:hover::after {
-                    background-color: var(--secondary);
-                    transition: all var(--primary-transition);
-               }
-          }
-
-          &.active>button {
-               &::after {
-                    opacity: 0;
-                    transition: all var(--primary-transition);
-               }
-          }
-     }
-}
-
-// Special Cases
-.hero-block {
-     .tabWrap {
+     button{
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: 1fr;
-          justify-content: stretch;
-          position: relative;
-          height: 100%;
+          align-items: center;
+          width: 100%;
+          height: 45px;
+          color: $black;
+          text-align: left;
+          background-color: $white;
+          border: none;
+          border-bottom: $blackregborder;
+
+          &::before, &::after{
+               content: '';
+               position: absolute;
+               top: calc(50% - 1.5px);
+               right: $spacereg;
+               width: 16px;
+               height: 3px;
+               background-color: $primary;
+          }
+
+          &::after{
+               rotate: 90deg;
+               transition: $primary-transition;
+          }
+
+          &:hover, &:focus{
+               color: $black;
+               background-color: $grey;
+          }
+     }
+
+     .single-tab-wrap{
+          height: auto;
+          max-height: 45px;
+          transition: $primary-transition;
           overflow: hidden;
 
-          .single-tbaccrd-wrap {
-               height: 100%;
+          &.active{
+               max-height: 1000vh;
+               transition: $primary-transition;
+          }
+     }
 
-               &:first-of-type>button {
-                    border-top: none;
-               }
+     p{
+          margin-left: auto;
+     }
 
-               &>button {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 75px calc(115px - 75px);
-                    align-items: end;
-                    justify-items: center;
-                    width: 100%;
-                    height: 115px;
-                    padding: 0;
-                    border: none;
+     .block-media-text{
+          margin: $spacereg 0;
+     }
 
-                    & span {
-                         font-size: .75rem;
-                         line-height: 1;
-                         text-align: center;
-                         padding: 0 0 var(--spacesmall) 0;
-                         opacity: 0;
-                         transition: opacity var(--primary-transition);
-                    }
+     .block-media-text__media{
+          width: $width;
+     }
 
-                    &::after {
-                         content: '';
-                         position: absolute;
-                         bottom: 1px;
-                         left: 0;
-                         width: 100%;
-                         height: 2px;
-                         transition: all var(--primary-transition);
-                         background-color: var(--secondary);
-                    }
+     .block-media-text__content{
+          #{$textElements}{
+               margin-left: 0;
+          }
+     }
 
-                    &:hover::after {
-                         bottom: 0px;
-                         height: 4px;
-                         transition: all var(--primary-transition);
-                    }
-
-                    .tab_icon {
-                         display: grid;
-                         place-items: center;
-                         width: 60px;
-                         height: 60px;
-                         background-color: var(--primary);
-                         border: 10px solid var(--primary);
-                         border-radius: 50%;
-
-                         svg {
-                              display: block;
-                              width: auto;
-                              ;
-                              height: 80%;
-
-                              path {
-                                   fill: var(--white);
-                              }
-                         }
-                    }
-               }
-
-               &.active {
-                    &>button {
-                         span {
-                              opacity: 1;
-                              transition: opacity var(--primary-transition);
-                         }
-                    }
-               }
-
-               .tab-content {
-                    position: absolute;
-                    top: auto;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: calc(100% - 115px);
-                    max-height: fit-content;
-                    padding: var(--spacereg) 0;
-                    opacity: 0;
-                    z-index: -100;
-                    overflow: hidden;
-                    transition: opacity var(--fast-transition);
-
-                    .content_information {
-                         width: 100%;
-                         height: 100%;
-                         padding: 0;
-                         margin: 0;
-                    }
-               }
-
-               &.active {
-                    button {
-                         &::after {
-                              bottom: 0;
-                              height: 4px;
-                              transition: height var(--primary-transition);
-                         }
-                    }
-
-                    .tab-content {
-                         opacity: 1;
-                         z-index: 100;
-                         transition: opacity var(--fast-transition);
-                    }
+     .active{
+          button{
+               &::after{
+                    rotate: 0deg;
+                    transition: $primary-transition;
                }
           }
      }
-}
-// Special Cases - END
 
-@media only screen and (min-width: 880px) {
-     .tabWrap {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(auto, 25ch));
-          grid-template-rows: 1fr;
-          justify-content: center;
-          position: relative;
-          overflow: hidden;
-          transition: height var(--primary-transition);
-          will-change: height;
+     @container(min-width: 1024px){
+          .block-media-text{
+               display: grid;
+               grid-template-columns: repeat(2, 50%);
+               min-height: auto;
+               gap: ($limitgrid);
+               align-items: center;
 
-          .single-tab-wrap {
-               overflow: hidden;
+               div, figure{
+                    width: auto;
+               }
 
-               &>button {
-                    height: 60px;
-                    padding: 0;
+               figure{
+                    min-height: auto;
+                    aspect-ratio: 4/3;
+               outline: 10px solid aquamarine;
+               }
+
+               div{
+                    width: calc($limitgrid * 4);
+
+                    #{$textElements, $headerElements}{
+                         width: 100%;
+                         margin-left: 0;
+                    }
+               }
+          }
+
+          &.tabWrap{
+               display: grid;
+               grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+               align-items: start;
+
+               button{
+                    height: 95px;
                     text-align: center;
-                    line-height: 1.25;
-                    border: none;
-                    overflow-y: visible;
-
-                    &::after {
-                         content: '';
-                         position: absolute;
-                         bottom: 1px;
-                         left: 0;
-                         width: 100%;
-                         height: 2px;
-                         transition: all var(--primary-transition);
-                         background-color: var(--secondary);
-                    }
-
-                    &:hover::after {
-                         bottom: 0px;
-                         height: 4px;
-                         transition: all var(--primary-transition);
-                    }
-               }
-
-               &:first-of-type>button {
                     border-top: none;
-               }
+                    border-bottom: 5px solid transparent;
+                    background-color: $grey;
+                    transition: all $primary-transition;
 
-               .tab-content {
-                    position: absolute;
-                    top: 70px;
-                    left: 0;
-                    width: 100%;
-                    height: auto;
-                    padding: var(--spacereg) 0;
-                    max-height: fit-content;
-                    opacity: 0;
-                    z-index: -100;
-                    transition: opacity var(--fast-transition);
-               }
-
-               &.active {
-                    button {
-                         &::after {
-                              bottom: 0;
-                              height: 4px;
-                              transition: height var(--primary-transition);
-                         }
+                    &:hover, &:focus-within{
+                         color: $black;
+                         border-bottom: 5px solid $primary;
+                         transition: all $primary-transition;
                     }
 
-                    .tab-content {
-                         opacity: 1;
-                         z-index: 100;
-                         transition: opacity var(--fast-transition);
+                    &::before, &::after{
+                         display: none;
                     }
                }
 
-               &:last-of-type button {
-                    border-top: none;
+               .active{
+                    button{
+                         background-color: $white;
+                         border-top: none;
+                         outline: none;
+                         border-bottom: 5px solid $primary;
+                         transition: all $primary-transition;
+                    }
                }
           }
      }
 
-     .tab-group-wrapper.accordionWrap {
-          .tab-content {
+     @container(min-width: 1440px){
+          .block-media-text{
+               gap: ($spacegrid);
 
-               &>div,
-               &>.block-group {
-                    padding: var(--spacereg) 0 !important;
-               }
-          }
-     }
-
-     .hero-block{
-          .tabWrap{
-               .single-tbaccrd-wrap{
-                    & > button{
-                         .tab_icon{
-                              width: 75px;
-                              height: 75px;
-                         }
-
-                         span{
-                              padding: var(--spacesmall) 0;
-                              font-size: 1rem;
-                              opacity: 1;
-                         }
-                    }
+               div{
+                    width: calc($spacegrid * 4);
                }
           }
      }

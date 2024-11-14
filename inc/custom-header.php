@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Omnitrans_2020
+ * @package celscratch_2020
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses omninew_header_style()
+ * @uses scratch_header_style()
  */
-function omninew_custom_header_setup() {
+function scratch_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'omninew_custom_header_args',
+			'scratch_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'omninew_header_style',
+				'wp-head-callback'   => 'scratch_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'omninew_custom_header_setup' );
+add_action( 'after_setup_theme', 'scratch_custom_header_setup' );
 
-if ( ! function_exists( 'omninew_header_style' ) ) :
+if ( ! function_exists( 'scratch_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see omninew_custom_header_setup().
+	 * @see scratch_custom_header_setup().
 	 */
-	function omninew_header_style() {
+	function scratch_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

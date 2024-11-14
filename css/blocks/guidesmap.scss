@@ -5,7 +5,7 @@
 
 .guidesmap_wrap{
      padding: 0;
-     margin: 0 0 var(--spacelarge) 0;
+     margin: 0 0 $spacelarge 0;
      overflow:hidden;
 }
 
@@ -13,7 +13,7 @@
      max-width: var(--guides-max-width);
      height: auto;
      max-height: 50px;
-     margin: 0 var(--spacereg) 0 auto;
+     margin: 0 $spacereg 0 auto;
      overflow: hidden;
      transition: all .25s ease-in-out;
 }
@@ -26,13 +26,13 @@
      max-height: 50vh;
      overflow-x: hidden;
      overflow-y: scroll;
-     border-bottom: 2px solid var(--primary);
+     border-bottom: 2px solid $primary;
      transition: all .25s ease-in-out .15s;
 }
 
 .accord_sec_wrap.active .block-button a.block-button__link{
-     color: var(--white);
-     background-color: var(--primary);
+     color: $white;
+     background-color: $primary;
      transition: all .25s ease-in-out;
 }
 
@@ -40,9 +40,9 @@
      position: sticky;
      top: 0;
      width: 100%;
-     padding: var(--spacelarge) var(--spacereg);
+     padding: $spacelarge $spacereg;
      margin: 0 0 0 auto;
-     background-color: var(--tertiary);
+     background-color: $tertiary;
      overflow-x: hidden;
      overflow-y: scroll;
 }
@@ -66,8 +66,8 @@
 
 .gm-style .gm-style-iw-c{
      padding: 0 !important;
-     background-color: var(--white);
-     outline: 5px solid var(--secondary);
+     background-color: $white;
+     outline: 5px solid $secondary;
 }
 
 .gm-style .gm-style-iw-tc{
@@ -75,16 +75,16 @@
      left: -5px;
      width: 18px;
      height: 18px;
-     background-color: var(--white);
-     border-bottom: 5px solid var(--secondary);
-     border-left: 5px solid var(--secondary);
+     background-color: $white;
+     border-bottom: 5px solid $secondary;
+     border-left: 5px solid $secondary;
      rotate: -45deg;
      border-radius: 0 100vw 0 0;
      z-index: -1;
 }
 
 .guides_map_marker{
-     padding: var(--spacesmall) var(--spacereg);
+     padding: $spacesmall $spacereg;
 }
 
 .gm-style-iw-t::after {
@@ -95,16 +95,16 @@
      left: -12px;
      width: 18px;
      height: 18px;
-     background-color: var(--white);
-     border-bottom: 5px solid var(--secondary);
-     border-left: 5px solid var(--secondary);
+     background-color: $white;
+     border-bottom: 5px solid $secondary;
+     border-left: 5px solid $secondary;
      rotate: -45deg;
      border-radius: 0 100vw 0 0;
      z-index: 1;
 }
 
 .guides_map_marker p.h3{
-     padding-bottom: var(--spacesmall);
+     padding-bottom: $spacesmall;
 }
 
 .gm-style .gm-style-iw-tc::after{
@@ -115,12 +115,12 @@
 .accord_sec_wrap{
      .block-button a.block-button__link{
           width: 100%;
-          padding: var(--spacesmall) var(--spacereg);
+          padding: $spacesmall $spacereg;
           text-align: left;
-          color: var(--primary);
-          background-color: var(--white);
+          color: $primary;
+          background-color: $white;
           border-top: 0;
-          border-bottom: 1px solid var(--primary);
+          border-bottom: 1px solid $primary;
           border-left: none;
           border-right: none;
           border-radius: 0;
@@ -129,17 +129,17 @@
 
      .block-button a.block-button__link:hover,
      .block-button a.block-button__link:focus{
-          color: var(--white);
-          background-color: var(--primary);
+          color: $white;
+          background-color: $primary;
           transition: all .25s ease-in-out;
      }
      
      &:first-of-type .block-button a.block-button__link{
-          border-top: 1px solid var(--primary);
+          border-top: 1px solid $primary;
      }
 
      .guidesmap_dest{
-          padding: var(--spacereg);
+          padding: $spacereg;
      }
 
      .accord_btn{
@@ -168,7 +168,7 @@
           width: 20px;
           height: 3px;
           border-radius: 100vw;
-          background-color: var(--primary);
+          background-color: $primary;
      }
 
      &.active .accord_btn a .plus::before,
@@ -177,7 +177,7 @@
      .accord_btn a:focus .plus::before,
      .accord_btn a:hover .plus::after,
      .accord_btn a:focus .plus::after{
-          background-color: var(--white);
+          background-color: $white;
      }
 
      .accord_btn .plus::after{
@@ -203,9 +203,9 @@
 }
 
 .guidesmap_dest:not(:first-of-type){
-     border-top: 2px solid var(--tertiary);
+     border-top: 2px solid $tertiary;
 }
 
 .guidesmap_dest:hover, .guidesmap_dest:focus{
-     background-color: var(--tertiary);
+     background-color: $tertiary;
 }

@@ -2,28 +2,28 @@
 .card_grid {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-     gap: var(--spacereg);
+     gap: $spacereg;
      align-items: start;
      align-content: stretch;
      justify-items: stretch;
      width: 100%;
-     max-width: var(--max-width);
+     max-width: $max-width;
      margin: 0 auto;
 }
 
 .icon-grid {
-     max-width: var(--max-content-width);
+     max-width: $max-content-width;
 }
 
 .link-grid {
      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-     gap: var(--spacelarge);
+     gap: $spacelarge;
 }
 
 .icon-grid {
      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-     gap: var(--spacelarge);
-     padding: var(--spacexl) 0;
+     gap: $spacelarge;
+     padding: $spacexl 0;
 }
 
 .card_grid:not(.icon-grid) {
@@ -41,7 +41,7 @@
 
 .icon-grid .grid_card {
      grid-template-rows: auto 55px auto;
-     gap: var(--spacereg);
+     gap: $spacereg;
      overflow: hidden;
 }
 
@@ -66,40 +66,40 @@
      display: grid;
      width: 100px;
      height: 100px;
-     margin: 0 auto var(--spacesmall) auto;
+     margin: 0 auto $spacesmall auto;
 }
 
 .grid_card p:not(.query_placeholder p.h2, .query-links p) {
      height: 100%;
-     padding: var(--spacereg);
-     color: var(--white);
-     background-color: var(--secondary);
+     padding: $spacereg;
+     color: $white;
+     background-color: $secondary;
      margin: 0;
-     padding: var(--spacereg) var(--spacelarge);
+     padding: $spacereg $spacelarge;
 }
 
 .icon-grid .grid_card p {
-     padding: 0 var(--spacereg);
+     padding: 0 $spacereg;
 }
 
 .grid_card p:not(.card_byline),
 .grid_card p:not(.card_byline) strong {
-     font: var(--header_five);
-     font-weight: var(--fnt-wght-bold);
+     font: $body_reg;
+     font-weight: $wght-bold;
 }
 
 .grid_card p.card_byline {
-     font: var(--body-reg);
-     padding: 0 var(--spacelarge) var(--spacereg) var(--spacelarge);
+     font: $size-body;
+     padding: 0 $spacelarge $spacereg $spacelarge;
 }
 
 .grid_card p.card_byline strong {
-     font: var(--body-reg);
+     font: $size-body;
 }
 
 .icon-grid .grid_card p.card_byline {
-     font: var(--body-reg);
-     padding: 0 var(--spacereg);
+     font: $size-body;
+     padding: 0 $spacereg;
 }
 
 .add-sub-head p.card_byline {
@@ -111,7 +111,7 @@
 }
 
 .icon-grid p {
-     color: var(--primary);
+     color: $primary;
      background-color: transparent;
 }
 
@@ -120,14 +120,14 @@
      position: relative;
      width: 18px;
      height: 23px;
-     margin: 0 0 0 var(--spacesmall);
-     transition: margin var(--primary-transition);
+     margin: 0 0 0 $spacesmall;
+     transition: margin $primary-transition;
 }
 
 .grid_card:hover p span,
 .grid_card:focus p span {
-     margin: 0 0 0 var(--spacereg);
-     transition: margin var(--primary-transition);
+     margin: 0 0 0 $spacereg;
+     transition: margin $primary-transition;
 }
 
 .grid_card svg {
@@ -135,11 +135,11 @@
      top: 8px;
      width: auto;
      height: 18px;
-     fill: var(--white);
+     fill: $white;
 }
 
 .icon-grid svg path {
-     fill: var(--primary);
+     fill: $primary;
 }
 
 // Grid Card - END
@@ -157,7 +157,7 @@
           left: 0;
           width: 100%;
           height: auto;
-          padding: var(--spacereg) var(--spacelarge);
+          padding: $spacereg $spacelarge;
           min-height: 90px;
      }
 
@@ -167,7 +167,7 @@
      }
 
      p:not(.query_placeholder p.h2){
-          color: var(--white);
+          color: $white;
      }
 
      p.h5 {
@@ -178,20 +178,20 @@
      p.card_byline {
           height: auto;
           max-height: 0;
-          padding: var(--spacereg) 0 0 0;
+          padding: $spacereg 0 0 0;
           overflow: hidden;
-          transition: max-height var(--slow-transition);
+          transition: max-height $slow-transition;
      }
 
      .blck_lnk_arrow {
-          fill: var(--white);
+          fill: $white;
      }
 
      a:hover .card_byline,
      a:focus .card_byline,
      a:focus-within .card_byline {
           max-height: 500px;
-          transition: max-height var(--slow-transition);
+          transition: max-height $slow-transition;
      }
 
      .query_placeholder {
@@ -200,7 +200,7 @@
           grid-template-rows: auto auto 100px;
           place-content: center;
           place-items: center;
-          background-color: var(--white);
+          background-color: $white;
      }
 
      .query_placeholder svg {
@@ -215,7 +215,7 @@
      }
 
      .query_placeholder p.h2{
-          color: var(--primary);
+          color: $primary;
      }
 }
 

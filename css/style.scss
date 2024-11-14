@@ -2,34 +2,36 @@
 @import "base/variables";
 @import "base/reset";
 @import "base/masthead";
+@import "base/navigation";
 @import "base/footer";
+@import "base/editorstyles";
+@import "elements/search";
 
 .entry-content{
-     container-type: inline-size;
      @import "base/global";
+     @import "base/sections";
      @import "base/media";
-     @import "base/forms";
-     @import "base/editorstyles";
+     //@import "base/forms";
 
      // Blocks
-     @import "blocks/custgroup";
-     @import "blocks/cardgrid";
-     @import "blocks/guidesmap";
-     @import "blocks/promos";
-     @import "blocks/herohead";
-     @import "blocks/trpplnr";
+     @import "blocks/titleintro";
+     @import "blocks/cards";
      @import "blocks/tabaccord";
-     @import "blocks/tooltip";
+     //@import "blocks/custgroup";
+     //@import "blocks/cardgrid";
+     //@import "blocks/guidesmap";
+     //@import "blocks/promos";
+     //@import "blocks/herohead";
+     //@import "blocks/trpplnr";
+     //@import "blocks/tooltip";
      // Elements
      @import "elements/buttons";
 }
 
 //Page specific
-@import "pages/newresident";
-@import "pages/routes";
 
 // Temporary
-//@import "./temp";
+@import "./temp";
 
 // Accessibility
 @import "base/accessibility";

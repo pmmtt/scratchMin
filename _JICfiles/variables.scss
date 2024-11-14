@@ -1,0 +1,96 @@
+:root {
+     --black: #313133;
+     --white: #fff;
+     --primary: #174F84;
+     --secondary: #0A7BBE;
+     --tertiary: #FEC000;
+     --orange: #FA8711;
+     --grey: #EBEBEB;
+     --alerts: #AB0816;
+
+     --primary-fifty: #517BA3;
+     --secondary-fifty: #84BDDF;
+     --tertiary-fifty: #FFDF80;
+     --alerts-fifty: #D5838A;
+     --black-fifty: #656566;
+     --grey-fifty: #F5F5F5;
+
+     --overlay-black: rgba(0, 0, 0, .5);
+     --white-overlay: rgba(255, 255, 255, .75);
+
+     --gradient-primary: linear-gradient(180deg, rgba(194, 222, 239, 0.05) 0%, rgba(10, 123, 190, 0.50) 54%, rgba(194, 222, 239, 0.05) 100%);
+     --gradient-secondary: linear-gradient(180deg, rgba(255, 239, 191, 0.00) 0%, rgba(255, 223, 128, 0.50) 50%, rgba(254, 192, 0, 0.00) 100%);
+
+     --btnshadow: 0px 4px 6px 0px rgba(81, 123, 163, 0.50);
+
+     /* Fonts */
+     --font-family: 'ivyepic-variable', serif;
+
+     --size-body: 16px/1.66667rem var(--font-family);
+     --size-hone: 4.44444rem/4.44444rem var(--font-family);
+     --size-htwo: 2.66667rem/2.88889rem var(--font-family);
+     --size-hthree: 2rem/2.22222rem var(--font-family);
+     --size-hfour: 1.33333rem/1.88889rem var(--font-family);
+     --size-hfive: 1.11111rem/1.66667rem var(--font-family);
+     --size-hsix: 1.05555rem/1.66667rem var(--font-family);
+     --size-button: 0.88889rem/1.22222rem var(--font-family);
+     --wght-body: 400;
+     --wght-semibold: 500;
+     --wght-bold: 600;
+     --wght-black: 800;
+
+     --cond_500: 'wdth' 70, 'wght' var(--wght-semibold), 'slnt' 0;
+     --cond_400: 'wdth' 70, 'wght' var(--wght-body), 'slnt' 0;
+     --cond_600: 'wdth' 70, 'wght' var(--wght-bold), 'slnt' 0;
+     --cond_800: 'wdth' 70, 'wght' var(--wght-black), 'slnt' 0;
+     --body_reg: 'wdth' 100, 'wght' var(--wght-body), 'slnt' 0;
+     --body_bold: 'wdth' 100, 'wght' var(--wght-bold), 'slnt' 0;
+
+     --bbutton: 'wdth' 100, 'wght' var(--wght-bold), 'slnt' 0;
+     /* Fonts - END */
+
+     /* Spaceing */
+     --width: calc(100vw - var(--spacereg));
+     --max-width: 1440px;
+     --max-content-width: calc(((var(--max-width) / 12) + (var(--spacereg) / 2.5)) * 8);
+
+     --spacereg: 18px;
+     --spacexl: calc(var(--spacereg) * 3);
+     --spacelarge: calc(var(--spacereg) * 2);
+     --spacesmall: calc(var(--spacereg) / 2);
+     --spaceexsmall: calc(var(--spacereg) / 4);
+     --spacegrid: calc(var(--max-width) / 12);
+     --btntop: calc(var(--spacesmall) + 5px);
+
+     --content-padding: calc(var(--width) / 12);
+     --space-left: calc((100vw - var(--width)) / 2);
+     --max-content-padding: calc(var(--max-width) / 16);
+     /* Spaceing - END */
+
+     /* Extras */
+     --primary-transition: .5s ease-in-out;
+     --fast-transition: .25s ease-in-out;
+     --border-radius: 4px;
+     /* Extras - END */
+
+     /* Transitions */
+     --fast-transition: .25s ease-in-out;
+     --reg-transition: .5s ease-in-out;
+     --slow-transition: 1s ease-in-out;
+
+     --button-hover: 0 3px 3px 0;
+     /* Transitions - END */
+}
+
+@media only screen and (min-width: 1024px) {
+     :root{
+          --space-left: calc(var(--width) / 10);
+     }
+}
+
+@media only screen and (min-width: 1400px) {
+     :root{
+          --max-content-padding: calc(var(--max-width) / 12);
+          --space-left: calc((100vw - var(--max-width)) / 2 + var(--spacegrid) + 3px);
+     }
+}

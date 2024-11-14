@@ -25,7 +25,7 @@ registerBlockType('celorgscratch/custbtn', {
           const blockProps = useBlockProps();
 
           return (
-               <div {...blockProps}>
+               <button {...blockProps}>
                     <PlainText
                          tagName="button"
                          placeholder={__('Add button text...', 'text-domain')}
@@ -34,7 +34,7 @@ registerBlockType('celorgscratch/custbtn', {
                          style={{ textAlign: attributes.align }}
                          aria-label={attributes.text || attributes.ariaLabel}
                     />
-               </div>
+               </button>
           );
      },
      save: (props) => {

@@ -1,0 +1,62 @@
+.title-intro{
+     .title-wrap{
+          width: $width;
+          max-width: 800px;
+          padding: $spacereg 0 0 0;
+          margin: 0 auto $spacelarge 0;
+     }
+
+     h1, .h1, h2, .h2, h3, .h3, h4, .h4{
+          &, a, strong, a strong, strong a{
+               &{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 3px;
+                    gap: $spacesmall;
+                    position: relative;
+                    width: fit-content;
+                    max-width: calc($spacegrid * 4);
+                    padding: 0;
+                    margin: 0 auto;
+                    text-align: center;
+          
+                    &::after{
+                         content: '';
+                         display: block;
+                         width: 100%;
+                         height: 3px;
+                         background-color: $tertiary;
+                    }
+               }
+          }
+     }
+
+     p{
+          max-width:  calc($spacegrid * 6);
+          padding: $spacereg 0 0 0;
+          margin: 0 auto;
+     }
+}
+
+@container (min-width: 1024px) {
+     .title-intro{
+          padding: $spacereg calc($spacegrid * 2) $spacereg $spacegrid;
+
+          .title-wrap{
+               width: 100%;
+               max-width: 800px;
+               margin: 0 auto;
+          }
+
+          #{$textElements}{
+               padding-right: 0;
+               padding-left: 0;
+          }
+     }
+}
+
+@container (min-width: 1400px) {
+     .title-intro{
+          padding: 0 calc($spacegrid * 3) $spacereg $spacegrid;
+     }
+}

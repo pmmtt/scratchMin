@@ -1,86 +1,148 @@
-import { registerBlockType } from '@wordpress/blocks';
-import { InnerBlocks, BlockControls, URLInput } from '@wordpress/block-editor';
-import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
-import { useState } from '@wordpress/element'; // Import useState
+import { registerBlockType } from "@wordpress/blocks";
+import { InnerBlocks, BlockControls, URLInput } from "@wordpress/block-editor";
+import { ToolbarGroup, ToolbarButton } from "@wordpress/components";
+import { useState } from "@wordpress/element";
+import { useSelect } from "@wordpress/data";
 
-registerBlockType('omnifseupdt/gridcard', {
-     title: 'Grid Card',
-     category: 'layout',
-     parent: ['omnifseupdt/cardgrid'],
-     attributes: {
-          url: {
-               type: 'string',
-               default: '',
-          },
-     },
-     supports: {
-          color: {
-               text: false,
-               link: true,
-               background: true
-          },
-          url: {
-               type: 'string',
-               source: 'attribute',
-          }
-     },
-     edit: function (props) {
-          const { attributes, setAttributes } = props;
-          const [isURLInputVisible, setURLInputVisibility] = useState(false); // Correct use of useState
+registerBlockType("celorgscratch/gridcard", {
+	title: "Grid Card",
+	category: "layout",
+	parent: ["celorgscratch/cardgrid"],
+	attributes: {
+		url: {
+			type: "string",
+			default: "",
+		},
+		parentImageCards: {
+			type: "string",
+			default: "",
+		},
+	},
+	supports: {
+		color: {
+			text: false,
+			link: true,
+			background: true,
+		},
+	},
+	edit: function (props) {
+		const { attributes, setAttributes, clientId } = props;
+		const [isURLInputVisible, setURLInputVisibility] = useState(false);
 
-          return (
-               <div className="grid_card">
-                    <BlockControls>
-                         <ToolbarGroup>
-                              <ToolbarButton
-                                   icon="admin-links"
-                                   label="Add URL"
-                                   onClick={() => setURLInputVisibility(!isURLInputVisible)}
-                              />
-                         </ToolbarGroup>
-                    </BlockControls>
-                    {isURLInputVisible && (
-                         <div style={{ position: 'absolute', zIndex: '100', padding: '10px', background: 'white', top: '40px' }}>
-                              <URLInput
-                                   value={attributes.url}
-                                   onChange={(newURL) => setAttributes({ url: newURL })}
-                                   autoFocus={false}
-                              />
-                         </div>
-                    )}
-                    <InnerBlocks
-                         allowedBlocks={['core/image', 'core/paragraph']}
-                         template={[
-                              ['core/image', {}],
-                              ['core/paragraph', { placeholder: 'Card Headline', className: 'h4' }],
-                              ['core/paragraph', { placeholder: 'Card Byline', className: 'card_byline' }]
-                         ]}
-                         templateLock="all"
-                    />
-                    <span>
-                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                              viewBox="0 0 22 22" style={{ enableBackground: 'new 0 0 22 22' }} xmlSpace="preserve">
-                              <g transform="translate(0 2)">
-                                   <path className="white_lnk_arrow" d="M11-2L9,0l7.57,7.57H0v2.86h16.57L9,18l2,2L22,9L11-2z"></path>
-                              </g>
-                         </svg>
-                    </span>
-               </div>
-          );
-     },
-     save: function ({ attributes }) {
-          return (
-               <a href={attributes.url} className="grid_card">
-                    <InnerBlocks.Content />
-                    <span>
-                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                              viewBox="0 0 22 22" style={{ enableBackground: 'new 0 0 22 22' }} xmlSpace="preserve">
-                              <g transform="translate(0 2)">
-                                   <path className="white_lnk_arrow" d="M11-2L9,0l7.57,7.57H0v2.86h16.57L9,18l2,2L22,9L11-2z"></path>
-                              </g>
-                         </svg>
-                    </span>
-               </a>
-          );
-     }
+		// Check parent attributes in editor to determine grid type
+		const parentAttributes = useSelect(
+			(select) => {
+				const parentBlockId = select("core/block-editor").getBlockParents(clientId)[0];
+				return parentBlockId ? select("core/block-editor").getBlock(parentBlockId)?.attributes : {};
+			},
+			[clientId],
+		);
+		const isImageQuickLinks = parentAttributes?.imageCards === "image-quick-links";
+		const isGridWidthCard = parentAttributes?.imageCards === "grid-width-card";
+		const isCarouselCard = parentAttributes?.imageCards === "carousel-card";
+
+		// Update parentImageCards attribute based on parent block
+		const newParentImageCards = isImageQuickLinks ? "image-quick-links" : isGridWidthCard ? "grid-width-card" : isCarouselCard ? "carousel-card" : "";
+		if (attributes.parentImageCards !== newParentImageCards) {
+			setAttributes({ parentImageCards: newParentImageCards });
+		}
+
+		return (
+			<div className="grid_card">
+				{/* Only show URL input toolbar if grid-width-card and carousel-card are NOT selected */}
+				{!isGridWidthCard && !isCarouselCard && (
+					<>
+						<BlockControls>
+							<ToolbarGroup>
+								<ToolbarButton icon="admin-links" label="Add URL" onClick={() => setURLInputVisibility(!isURLInputVisible)} />
+							</ToolbarGroup>
+						</BlockControls>
+						{isURLInputVisible && (
+							<div className="url-input-popup">
+								<URLInput value={attributes.url} onChange={(newURL) => setAttributes({ url: newURL })} autoFocus={false} />
+							</div>
+						)}
+						<InnerBlocks
+							allowedBlocks={["core/image", "core/paragraph", "core/button"]}
+							template={[
+								["core/image", {}],
+								[
+									"core/group",
+									{ className: "card-content" },
+									[
+										["core/paragraph", { placeholder: "Card Headline", className: "h4" }],
+										// Conditionally add Card Byline if not in Image Quick Links
+										...(!isImageQuickLinks ? [["core/paragraph", { placeholder: "Card Byline", className: "card_byline" }]] : []),
+										// Add a button with URL only if in grid-width-card mode
+										...(isGridWidthCard ? [["core/button", { text: "Read More", url: attributes.url }]] : []),
+									],
+								],
+							]}
+							templateLock="all"
+						/>
+					</>
+				)}
+				{isGridWidthCard && (
+					<InnerBlocks
+						allowedBlocks={["core/image", "core/paragraph", "core/button"]}
+						template={[
+							["core/image", {}],
+							[
+								"core/group",
+								{ className: "card-content" },
+								[
+									["core/paragraph", { placeholder: "Card Headline", className: "h4" }],
+									// Conditionally add Card Byline if not in Image Quick Links
+									...(!isImageQuickLinks ? [["core/paragraph", { placeholder: "Card Byline", className: "card_byline" }]] : []),
+									// Add a button with URL only if in grid-width-card mode
+									...(isGridWidthCard ? [["core/button", { text: "Read More", url: attributes.url }]] : []),
+								],
+							],
+						]}
+						templateLock="all"
+					/>
+				)}
+				{isCarouselCard && (
+					<InnerBlocks
+						allowedBlocks={["core/image", "core/paragraph", "core/button"]}
+						template={[
+							["core/image", {}],
+							[
+								"core/group",
+								{ className: "card-content" },
+								[
+									["core/paragraph", { placeholder: "Card Headline", className: "h4" }],
+									// Conditionally add Card Byline if not in Image Quick Links
+									...(!isImageQuickLinks ? [["core/paragraph", { placeholder: "Card Byline", className: "card_byline" }]] : []),
+									// Add a button with URL only if in carousel-card mode
+									...(isCarouselCard ? [["core/button", { text: "Read More", url: attributes.url }]] : []),
+								],
+							],
+						]}
+						templateLock="all"
+					/>
+				)}
+			</div>
+		);
+	},
+	save: function ({ attributes }) {
+		const isGridWidthCard = attributes.parentImageCards === "grid-width-card";
+		const isCarouselCard = attributes.parentImageCards === "carousel-card";
+
+		// Render without <a> wrapper if grid-width-card or carousel-card is selected
+		if (isGridWidthCard || isCarouselCard) {
+			return (
+				<div className="grid_card">
+					<InnerBlocks.Content />
+				</div>
+			);
+		}
+
+		// For other modes, wrap the entire block in <a> with href set to attributes.url
+		return (
+			<a href={attributes.url} className="grid_card">
+				<InnerBlocks.Content />
+			</a>
+		);
+	},
 });

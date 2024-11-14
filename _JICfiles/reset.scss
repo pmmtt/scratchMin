@@ -1,0 +1,263 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+     font: $size-body;
+     font-variation-settings: $body_reg;
+     color: $black;
+     margin: 0;
+     padding: 0;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html{
+	width: 100vw;
+     overflow: hidden;
+}
+
+body {
+	width: 100%;
+     height: 100vh;
+	padding: 0;
+	overflow-x: hidden;
+     overflow-y: scroll;
+     scroll-behavior: smooth;
+     scroll-padding: 60px;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button{
+	background-color: transparent;
+	box-shadow: none;
+	border: none;
+}
+
+form, input, textarea{
+     font: $size-body;
+     font-variation-settings: $body_reg;
+     color: $black;
+     box-sizing: border-box;
+}
+
+// Heading Elements
+h1, .h1, p.has-h-1-font-size{
+     &, a, strong, a strong, strong a{
+          font: $size-hone;
+          font-variation-settings: $cond_500;
+          text-transform: uppercase;
+          padding: 0 0 $spacelarge 0;
+     }
+
+     strong, a strong, strong{
+          font-variation-settings: $cond_800;
+     }
+}
+
+h2, .h2, p.has-h-2-font-size{
+     &, a, strong, a strong, strong a{
+          font: $size-htwo;
+          font-variation-settings: $cond_400;
+          text-transform: uppercase;
+          padding: 0 0 $spacelarge 0;
+     }
+}
+
+h3, .h3, .has-h-3-font-size {
+     &{
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 3px;
+          gap: $spacesmall;
+          position: relative;
+          width: fit-content;
+          padding: 0 0 $spacelarge 0;
+          font: $size-hthree;
+          font-variation-settings: $cond_600;
+          text-transform: uppercase;
+
+          &::after{
+               content: '';
+               display: block;
+               width: 100%;
+               height: 3px;
+               background-color: $tertiary;
+          }
+
+          &, &.has-text-align-left{
+               text-align: left;
+          }
+
+          &.has-text-align-center{
+               max-width: 600px;
+               margin: 0 auto;
+          }
+     }
+}
+
+h4, .h4, .has-h-4-font-size{
+     &, a, strong, a strong, strong a{
+          font: $size-hfour;
+          font-variation-settings: $body_reg;
+          text-transform: uppercase;
+          padding: 0 0 $spacereg 0;
+     }
+}
+
+h5, .h5, .has-h-5-font-size{
+     &, a, strong, a strong, strong a{
+          font: $size-hfive;
+          font-variation-settings: $body_bold;
+          padding: 0 0 $spacereg 0;
+     }
+}
+
+h6, .h6, .has-h-6-font-size{
+     &, a, strong, a strong, strong a{
+          font: $size-hsix;
+          font-variation-settings: $body_reg;
+          padding: 0 0 $spacereg 0;
+     }
+}
+// Heading Elements - END
+
+// Body - Elements
+p{
+     padding: 0 0 $spacereg 0;
+
+     a{
+          position: relative;
+          color: $secondary;
+          transition: color $primary-transition;
+
+          &::after{
+               content: '';
+               display: block;
+               position: absolute;
+               bottom: 0;
+               left: 0;
+               width: 100%;
+               height: 2px;
+               background-color: $tertiary;
+               opacity:0;
+          }
+
+          &:hover, &:focus{
+               color: $primary;
+               transition: color $primary-transition;
+
+               &::after{
+                    opacity: 1;
+                    transition: opacity $primary-transition;
+               }
+          }
+     }
+}
+
+a{
+     text-decoration: none;
+     cursor: pointer;
+}
+
+strong, a strong, strong a{
+     font-weight: $wght-bold;
+}
+
+em{
+     font-style: italic;
+
+     a, strong, a strong, strong a{
+          font-style: italic;
+     }
+}
+
+ul:not(nav ul), ol:not(nav ol){
+     padding: 0 0 $spacereg 0;
+
+     &::marker{
+          padding-right: $spacelarge;
+     }
+
+     li{
+          max-width: 90%;
+          padding: 0;
+          margin: 0 0 $spacesmall $spacexl;
+
+          &::marker{
+               color: $tertiary;
+          }
+     }
+}
+
+ul{
+     list-style-type: disc;
+}
+
+ol{
+     list-style-type: decimal;
+}
+
+a, img, button{
+     display: inline-block;
+}
+
+.has-small-font-size{
+     font: $size-button;
+     font-variation-settings: $body_bold;
+}
+
+.has-text-align-center{
+     text-align: center;
+}
+// Body - Elements - END
+
+// Global Styles
+#page {
+     padding: calc(50px + $spacelarge) 0 0 0;
+}
+
+@media only screen and (min-width: 1024px) {
+     body{
+          scroll-padding: calc(125px + $spacelarge);
+
+          #page {
+               padding: calc(125px + $spacelarge) 0 0 0;
+          }
+     }
+}
+// Global Styles - END

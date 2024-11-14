@@ -1,0 +1,351 @@
+& {
+	// Sections and Blocks
+	.has-background {
+		position: relative;
+		padding: $spacelarge 0;
+
+		&.has-primary-background-color {
+			a {
+				color: $white;
+			}
+
+			.block-button, .is-style-primary {
+				a {
+					&:hover, 	&:focus {
+						color: $primary;
+						background-color: $white;
+						border: 2px solid $white;
+					}
+				}
+			}
+
+			.is-style-outline {
+				a {
+					border: 2px solid $white;
+
+					&:hover, 	&:focus {
+						color: $primary;
+						background-color: $white;
+					}
+				}
+			}
+
+			.block-file a {
+				color: $white;
+
+				&::after {
+					background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyNCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjYgOC42MVYxNy4ySDIuNFY4LjYxSDBWMTkuNkgyNFY4LjYxSDIxLjZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTcuNDQgOC44Mzk5OUwxMy4yIDguNzk5OTlWMS41OTk5OUMxMy4yIDAuOTM5OTk0IDEyLjY2IDAuMzk5OTk0IDEyIDAuMzk5OTk0QzExLjM0IDAuMzk5OTk0IDEwLjggMC45Mzk5OTQgMTAuOCAxLjU5OTk5VjguNzk5OTlINi42NEwxMiAxNS4wOUwxNy40NCA4LjgzOTk5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==");
+				}
+			}
+		}
+
+		&.has-secondary-background-color {
+			a {
+				color: $white;
+				margin: 0;
+			}
+
+			.block-button, .is-style-secondary {
+				padding: 0 $spacereg $spacereg 0;
+				overflow: hidden;
+
+				a {
+					background-color: $primary;
+					border: 2px solid $primary;
+
+					&:hover, 	&:focus {
+						color: $secondary;
+						background-color: $white;
+						border: 2px solid $white;
+						box-shadow: $btnwhtshadow;
+					}
+				}
+			}
+
+			.is-style-outline {
+				a {
+					background-color: $secondary;
+					border: 2px solid $white;
+				}
+			}
+
+			.is-style-ghost {
+				a {
+					background-color: transparent;
+					border: 2px solid transparent;
+
+					&:hover, 	&:focus {
+						color: $white;
+						background-color: transparent;
+						border: 2px solid $white;
+					}
+				}
+			}
+
+			.block-file a {
+				color: $white;
+
+				&::after {
+					background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyNCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjYgOC42MVYxNy4ySDIuNFY4LjYxSDBWMTkuNkgyNFY4LjYxSDIxLjZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTcuNDQgOC44Mzk5OUwxMy4yIDguNzk5OTlWMS41OTk5OUMxMy4yIDAuOTM5OTk0IDEyLjY2IDAuMzk5OTk0IDEyIDAuMzk5OTk0QzExLjM0IDAuMzk5OTk0IDEwLjggMC45Mzk5OTQgMTAuOCAxLjU5OTk5VjguNzk5OTlINi42NEwxMiAxNS4wOUwxNy40NCA4LjgzOTk5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==");
+				}
+			}
+		}
+
+		&.has-tertiary-background-color {
+			a {
+				color: $primary;
+				margin: 0;
+			}
+
+			.block-button, .is-style-primary {
+				padding: 0 $spacereg $spacereg 0;
+				overflow: hidden;
+
+				a {
+					color: $white;
+					background-color: $primary;
+					border: 2px solid $primary;
+
+					&:hover, 	&:focus {
+						color: $secondary;
+						background-color: $white;
+						border: 2px solid $white;
+						box-shadow: $btnwhtshadow;
+					}
+				}
+			}
+
+			.is-style-outline {
+				a {
+					color: $primary;
+					background-color: $tertiary;
+					border: 2px solid $primary;
+				}
+			}
+
+			.is-style-ghost {
+				a {
+					color: $primary;
+					background-color: transparent;
+					border: 2px solid transparent;
+
+					&:hover, 	&:focus {
+						color: $primary;
+						background-color: transparent;
+						border: 2px solid $primary;
+						box-shadow: $btndrkshadow;
+					}
+				}
+			}
+
+			.block-file {
+				a {
+					&::before {
+						background-color: $primary;
+					}
+
+					&::after {
+						background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE7SURBVHgB7VVBTsMwENwNOXDsLZG45AntD8ILcH5AX4A4ooJIRSOO8APyBP+APoEn5IIUxMVHKlEv6wi3UaQGuyrqoZ1L1tmdmZW1tgEOCpEormJRXPpw0LUwFg8pEb6aOEQcvcvJmwsvgC2wBD1wrd3KwAdHg/0bhOu5Dua1vKlsIhH54AtOhnZNgKsYOT4ThVpCoMz6FBaqkrmy+Vg8JgA6bQyI6KUhoR7zp7RFhhCJ2T0rp92uNMGT5oQZWGZW7DjqVKRWt3eLFvCdNQIbgRVicN7uvoteA8VEI7DBpMm1t9XbwMAIaISs+x+Rsr/EnQwMPvneQcTxWh2ua3k3d+E6j2ktJyV3PUWi6Ye8fXblheAB7joHT/z7QcPoYka/sbnfFewEmPDRTEzU3qIh7Ay0ivhxwhKO6MEPkrhnnSqfy+4AAAAASUVORK5CYII=");
+					}
+				}
+			}
+		}
+
+		&.has-defgray-background-color {
+			a {
+				color: $primary;
+				margin: 0;
+			}
+
+			.block-button, .is-style-primary {
+				padding: 0 $spacereg $spacereg 0;
+				overflow: hidden;
+
+				a {
+					color: $white;
+					background-color: $primary;
+					border: 2px solid $primary;
+
+					&:hover, 	&:focus {
+						color: $secondary;
+						background-color: $grey;
+						border: 2px solid $primary;
+						box-shadow: $btndrkshadow;
+					}
+				}
+			}
+
+			.is-style-outline {
+				a {
+					color: $primary;
+					background-color: $grey;
+					border: 2px solid $primary;
+
+					&:hover, 	&:focus {
+						color: $white;
+						background-color: $primary;
+					}
+				}
+			}
+
+			.is-style-ghost {
+				a {
+					color: $primary;
+					background-color: transparent;
+					border: 2px solid transparent;
+
+					&:hover, 	&:focus {
+						color: $primary;
+						background-color: transparent;
+						border: 2px solid $primary;
+						box-shadow: $btndrkshadow;
+					}
+				}
+			}
+
+			.block-file {
+				a {
+					&::before {
+						background-color: $primary;
+					}
+
+					&::after {
+						background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE7SURBVHgB7VVBTsMwENwNOXDsLZG45AntD8ILcH5AX4A4ooJIRSOO8APyBP+APoEn5IIUxMVHKlEv6wi3UaQGuyrqoZ1L1tmdmZW1tgEOCpEormJRXPpw0LUwFg8pEb6aOEQcvcvJmwsvgC2wBD1wrd3KwAdHg/0bhOu5Dua1vKlsIhH54AtOhnZNgKsYOT4ThVpCoMz6FBaqkrmy+Vg8JgA6bQyI6KUhoR7zp7RFhhCJ2T0rp92uNMGT5oQZWGZW7DjqVKRWt3eLFvCdNQIbgRVicN7uvoteA8VEI7DBpMm1t9XbwMAIaISs+x+Rsr/EnQwMPvneQcTxWh2ua3k3d+E6j2ktJyV3PUWi6Ye8fXblheAB7joHT/z7QcPoYka/sbnfFewEmPDRTEzU3qIh7Ay0ivhxwhKO6MEPkrhnnSqfy+4AAAAASUVORK5CYII=");
+					}
+				}
+			}
+		}
+	}
+
+	.has-primary-background-color {
+		color: $white;
+		background-color: $primary;
+
+		#{$headerElements,
+		$textElements,
+		$subtextElements} {
+			color: $white;
+		}
+	}
+
+	.has-secondary-background-color {
+		color: $white;
+		background-color: $secondary;
+
+		#{$headerElements,
+		$textElements,
+		$subtextElements} {
+			color: $white;
+		}
+	}
+
+	.has-tertiary-background-color {
+		color: $black;
+		background-color: $tertiary;
+
+		#{$headerElements,
+		$textElements,
+		$subtextElements} {
+			color: $black;
+		}
+
+		h3 {
+			&::after {
+				background-color: $secondary;
+			}
+		}
+
+		ul:not(nav ul),
+		ol:not(nav ol) {
+			li::marker {
+				color: $secondary;
+			}
+		}
+
+		.title-intro {
+			h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+				&, a, strong, a strong, strong a {
+					&::after {
+						background-color: $secondary;
+					}
+				}
+			}
+		}
+	}
+
+	.has-alerts-background-color {
+		color: $white;
+		background-color: $alerts;
+
+		#{$headerElements,
+		$textElements,
+		$subtextElements} {
+			color: $white;
+		}
+	}
+
+	.has-defgray-background-color {
+		color: $black;
+		background-color: $grey;
+
+		#{$headerElements,
+		$textElements,
+		$subtextElements} {
+			color: $black;
+		}
+
+		h3 {
+			&::after {
+				background-color: $secondary;
+			}
+		}
+
+		ul:not(nav ul),
+		ol:not(nav ol) {
+			li::marker {
+				color: $secondary;
+			}
+		}
+
+		.title-intro {
+			h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+				&, a, strong, a strong, strong a {
+					&::after {
+						background-color: $secondary;
+					}
+				}
+			}
+		}
+	}
+
+	.has-primary-gradient-background {
+		background: $gradient-primary;
+	}
+
+	.has-secondary-gradient-background {
+		background: $gradient-secondary;
+
+		h3 {
+			&::after {
+				background-color: $secondary;
+			}
+		}
+
+		ul:not(nav ul),
+		ol:not(nav ol) {
+			li::marker {
+				color: $secondary;
+			}
+		}
+
+		.title-intro {
+			h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+				&, a, strong, a strong, strong a {
+					&::after {
+						background-color: $secondary;
+					}
+				}
+			}
+		}
+	}
+}

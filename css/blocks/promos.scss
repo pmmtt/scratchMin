@@ -18,7 +18,7 @@
 }
 
 .promo_wrap .promo_excerpt_wrap {
-     padding: var(--spacereg);
+     padding: $spacereg;
 }
 
 .promo_wrap figure {
@@ -49,23 +49,23 @@
 }
 
 .featured_promo .h3 {
-     font: var(--header_two);
+     font: $cond_400;
 }
 
 .promo_excerpt_wrap {
-     padding: var(--spacereg);
+     padding: $spacereg;
 }
 
 .promo_wrap_inner {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
-     gap: var(--spacereg);
+     gap: $spacereg;
      justify-content: center;
      width: 90vw;
-     max-width: var(--max-width);
+     max-width: $max-width;
      height: auto;
      margin: 0 auto;
-     padding: var(--spacexl) 0;
+     padding: $spacexl 0;
      overflow: hidden;
 }
 
@@ -76,25 +76,25 @@
 .promo_wrap_inner.mr_thn_fve {
      grid-template-columns: 1fr;
      grid-template-rows: auto auto;
-     gap: var(--spacereg);
+     gap: $spacereg;
 }
 
 .first_wrap,
 .remaining_wrap {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-     gap: var(--spacereg);
+     gap: $spacereg;
 }
 
-.block-omnifseupdt-promocard {
+.block-celorgscratch-promocard {
      max-width: 100%;
-     background-color: var(--white);
+     background-color: $white;
 }
 
 .promo_grid a .h3 {
-     color: var(--black);
+     color: $black;
 }
 
 .promo_grid a .promo_excerpt {
-     color: var(--primary);
+     color: $primary;
 }

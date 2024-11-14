@@ -1,19 +1,19 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/block-editor';
 
-registerBlockType('omnifseupdt/promogroup', {
+registerBlockType('celorgscratch/promogroup', {
      title: 'Promo Group',
      icon: 'smiley',
      category: 'text',
      edit: (props) => {
           return (
                <InnerBlocks
-                    allowedBlocks={['omnifseupdt/promocard', 'core/group']}
+                    allowedBlocks={['celorgscratch/promocard', 'core/group']}
                     template={[
                          ['core/group',
                               { className: 'promo_wrap', tagName: 'section' },
                               [
-                                   ['omnifseupdt/promocard',
+                                   ['celorgscratch/promocard',
                                         { className: 'featured_promo has-primary-background-color has-background', query: {} }
                                    ],
                                    ['core/group',
@@ -22,7 +22,7 @@ registerBlockType('omnifseupdt/promogroup', {
                                              ['core/group',
                                                   { className: 'promo_wrap_inner' },
                                                   [
-                                                       ['omnifseupdt/promocard', {}]
+                                                       ['celorgscratch/promocard', {}]
                                                   ]
                                              ]
                                         ]

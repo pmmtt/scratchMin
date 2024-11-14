@@ -1,68 +1,114 @@
-:root {
-     --black: #000;
-     --white: #fff;
-     --primary: #005aa8;
-     --secondary: #69a52b;
-     --tertiary: #e6f3ff;
-     --alerts: #F77E0F;
+$black: #313133;
+$white: #fff;
+$primary: #174F84;
+$secondary: #0A7BBE;
+$tertiary: #FEC000;
+$orange: #FA8711;
+$grey: #EBEBEB;
+$alerts: #AB0816;
 
-     --secondary-fifty: rgba(105, 165, 43, .5);
-     --tertiary-ninety: rgba(230, 243, 255, 0.9);
-     --white-fifty: rgba(255, 255, 255, .5);
+$primary-fifty: #517BA3;
+$secondary-fifty: #84BDDF;
+$tertiary-fifty: #FFDF80;
+$alerts-fifty: #D5838A;
+$black-fifty: #656566;
+$grey-fifty: #F5F5F5;
 
-     --black-fifty: rgba(0, 0, 0, .50);
+$overlay-black: rgba(0, 0, 0, .5);
+$white-overlay: rgba(255, 255, 255, .75);
 
-     --primary-shadow: 0 4px 8px rgba(0, 90, 168, .25);
-     --secondary-shadow: 0 4px 8px rgba(105, 165, 43, .25);
+$gradient-primary: linear-gradient(180deg, rgba(132, 189, 223, .05) 0%, rgba(132, 189, 223, .25) 15%, rgba(132, 189, 223, .75) 54%, rgba(132, 189, 223, .25) 85%, rgba(132, 189, 223, .05) 100%);
+$gradient-secondary: linear-gradient(180deg, rgba(255, 223, 128, .05) 0%, rgba(255, 223, 128, .25) 15%, rgba(255, 223, 128, .75) 50%, rgba(255, 223, 128, .25) 85%, rgba(255, 223, 128, .05) 100%);
 
-     --overlay-gradiant: linear-gradient(90deg,rgb(47,45,47) 0%,rgba(47,45,47,0.84) 45%);
-     --overlay-solid: rgba(0, 0, 0, .65);
-     --background-modal: rgba(255, 255, 255, .75);
-     
-     /* Fonts */
-     --font-family: 'Source Sans Pro', serif;
+$btnwhtshadow: 4px 4px 10px 0px rgba(255, 255, 255, 0.45);
+$btnshadow: 0px 4px 6px 0px rgba(81, 123, 163, 0.50);
+$btndrkshadow: 0px 4px 6px 0px rgba(23, 79, 132, 0.50);
 
-     --fnt-wght-reg: 400;
-     --fnt-wght-bold: 600;
-     --fnt-wght-black: 700;
+/* Fonts */
+$font-family: 'ivyepic-variable', serif;
 
-     --header_one: var(--fnt-wght-black) 2.25rem/calc(2.25rem + 0.125rem) var(--font-family);
-     --header_two: var(--fnt-wght-black) 1.85rem/calc(1.85rem + 0.125rem) var(--font-family);
-     --header_three: var(--fnt-wght-black) 1.5rem/calc(1.5rem + 0.125rem) var(--font-family);
-     --header_four: var(--fnt-wght-reg) 1.4rem/calc(1.4rem + 0.125rem) var(--font-family);
-     --header_five: var(--fnt-wght-reg) 1.3rem/calc(1.3rem + 0.125rem) var(--font-family);
-     --header_six: var(--fnt-wght-reg) 1.2rem/calc(1.2rem + 0.125rem) var(--font-family);
+$size-body: 16px/1.66667rem $font-family;
+$size-hone: 4.44444rem/4.44444rem $font-family;
+$size-htwo: 2.66667rem/2.88889rem $font-family;
+$size-hthree: 2rem/2.22222rem $font-family;
+$size-hfour: 1.33333rem/1.88889rem $font-family;
+$size-hfive: 1.11111rem/1.66667rem $font-family;
+$size-hsix: 1.05555rem/1.66667rem $font-family;
+$size-button: 0.88889rem/1.22222rem $font-family;
+$wght-body: 400;
+$wght-semibold: 500;
+$wght-bold: 600;
+$wght-black: 800;
 
-     --body-reg: var(--fnt-wght-reg) 18px/calc(1rem + 0.125rem) var(--font-family);
-     /* Fonts - END */
+$cond_500: 'wdth' 70, 'wght'$wght-semibold, 'slnt' 0;
+$cond_400: 'wdth' 70, 'wght'$wght-body, 'slnt' 0;
+$cond_600: 'wdth' 70, 'wght'$wght-bold, 'slnt' 0;
+$cond_800: 'wdth' 70, 'wght'$wght-black, 'slnt' 0;
+$body_reg: 'wdth' 100, 'wght'$wght-body, 'slnt' 0;
+$body_bold: 'wdth' 100, 'wght'$wght-bold, 'slnt' 0;
 
-     /* Spaceing */
-     --width: 95vw;
-     --max-width: 1440px;
-     --max-content-width: calc(((var(--max-width) / 12) + (var(--spacereg) / 2.5)) * 8);
+$button: 'wdth' 100, 'wght'$wght-bold, 'slnt' 0;
+/* Fonts - END */
 
-     --spacereg: 18px;
-     --spacexl: calc(var(--spacereg) * 3);
-     --spacelarge: calc(var(--spacereg) * 2);
-     --spacesmall: calc(var(--spacereg) / 2);
-     --spaceexsmall: calc(var(--spacereg) / 4);
-     --spacegrid: calc(var(--max-width) / 12);
+/* Spaceing */
+$spacereg: 18px;
+$spacexl: calc($spacereg * 3);
+$spacelarge: calc($spacereg * 2);
+$spacesmall: calc($spacereg / 2);
+$spaceexsmall: calc($spacereg / 4);
 
-     --content-padding: calc(var(--width) / 12);
-     --max-content-padding: calc(var(--max-width) / 12);
-     /* Spaceing - END */
+$width: calc(100vw - $spacereg);
+$limit-width: calc(($width / 12) * 8);
+$max-width: 1440px;
+$max-content-width: calc((($max-width / 12) + ($spacereg / 2.5)) * 8);
 
-     /* Extras */
-     --primary-transition: .5s ease-in-out;
-     --fast-transition: .25s ease-in-out;
-     --border-radius: 4px;
-     /* Extras - END */
+$spacegrid: calc($max-width / 12);
+$limitgrid: calc($width / 12);
+$btntop: calc($spacesmall + 5px);
 
-     /* Transitions */
-     --fast-transition: .25s ease-in-out;
-     --reg-transition: .5s ease-in-out;
-     --slow-transition: 1s ease-in-out;
+$smallleft: calc((100vw - $width) / 2);
+$spaceleft: calc($width / 10);
+$largeleft: calc(((100vw - $max-width) / 2) + ($spacegrid + 3px));
 
-     --button-hover: 0 3px 3px 0;
-     /* Transitions - END */
+$content-padding: calc($width / 12);
+/* Spaceing - END */
+
+/* Borders */
+$transparentregborder: 1px solid transparent;
+$blackregborder: 1px solid $black;
+
+/* Extras */
+$primary-transition: .5s ease-in-out;
+$fast-transition: .25s ease-in-out;
+$border-radius: 4px;
+/* Extras - END */
+
+/* Transition */
+$button-hover: 0 3px 3px 0;
+/* Transitions - END */
+
+/* Elements */
+$headerElements: h1, h2, h3, h4, h5, h6;
+
+$textElements: p, ol, ul, li, figcaption, blockquote, pre, abbr, acronym, address, b, bdi, bdo, code, data, del, dfn, ins, kbd, mark, q, s, samp, tt, u, var;
+
+$subtextElements: big, small, span, strong, sub, cite, time, em, i, sup;
+
+$lnkbtnElements:  a, button;
+
+$mediaElements: img, audio, video, source, track, picture, map, area, applet, object, iframe, canvas, embed, figure, figcaption;
+
+$containerElements: div, section, article, aside, nav, header, footer, main, figure, details, summary, caption, ruby, rp, rt, template, slot;
+
+$blockElements: '.block-columns', '.block-group';
+
+$lnkBtnElements: '.block-buttons', '.block-file';
+
+$interactElements: dl, dt, dd, fieldset, form, legend, input, select, option, optgroup, textarea, output, label, menu, menuitem;
+
+$tableElements: table, thead, tbody, tfoot, tr, th, td, col, colgroup;
+/* Elements - END */
+
+@media only screen and (min-width: 1024px) {
+     $spacegrid: calc(($width / 12) - $spacexl);
 }

@@ -19,11 +19,11 @@ const GUIDEDESTINATION = [
 ];
 
 // Registering the block
-registerBlockType('omnifseupdt/guidesaddress', {
+registerBlockType('celorgscratch/guidesaddress', {
      title: 'Guides Destination',
      icon: 'location',
      category: 'common',
-     parent: 'omnifseupdt/guidesmap',
+     parent: 'celorgscratch/guidesmap',
      attributes: {
           content: {
                type: 'array',

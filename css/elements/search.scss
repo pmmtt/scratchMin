@@ -1,0 +1,176 @@
+form {
+     display: inline-block;
+     position: relative;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     
+     input{
+          display: grid;
+          place-items: center;
+          width: 100%;
+          height: 70px;
+          padding: calc($spacereg + 5px) $spacereg $spacereg $spacereg;
+          border: 0;
+          border-radius: 0;
+          background-color: $grey;
+          box-sizing: border-box;
+
+          &::placeholder{
+               color: $primary;
+               opacity: 0;
+          }
+
+          &:hover{
+               cursor: pointer;
+          }
+     }
+
+     &::before{
+          content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_78_564)'%3E%3Cpath d='M22.79 8.41999C22.79 12.44 19.53 15.69 15.52 15.69C11.51 15.69 8.25 12.43 8.25 8.41999C8.25 4.40999 11.5 1.14999 15.51 1.14999C19.53 1.14999 22.78 4.40999 22.78 8.41999H22.79Z' stroke='%23313133' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.89 22.45L10.08 14.26L1.89 22.45Z' fill='none'/%3E%3Cpath d='M1.89 22.45L10.08 14.26' stroke='%23313133' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_78_564'%3E%3Crect width='24' height='24' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+          display: grid;
+          place-items: center;
+          position: absolute;
+          left: $spacereg;
+          top: calc(70px / 2);
+          width: auto;
+          height: 70px;
+          transform: translateY(-50%);
+     }
+}
+
+#search-results {
+     height: auto;
+     max-height: calc(100vh - calc(70px + $spacelarge));
+     margin: 0;
+     padding: 0;
+     background-color: #fff;
+     box-sizing: border-box;
+     overflow-x: hidden;
+     overflow-y: scroll;
+}
+
+.result-item {
+     padding: $spacesmall $spacereg;
+     border-bottom: 1px solid $grey;
+     overflow-x: hidden;
+     overflow-y: scroll;
+
+     &:last-child {
+          border-bottom: none;
+     }
+
+     h3{
+          padding: 0 0 $spacesmall 0;
+     }
+
+     p{
+          margin: 0;
+          font-size: 14px;
+          color: $black;
+     }
+
+     li{
+          list-style-position: inside;
+          padding: 0 0 $spacesmall $spacesmall;
+     }
+
+     *:not(h3){
+          font: $size-body;
+          font-variation-settings: $body_reg;
+     }
+}
+
+.highlight {
+     color: $secondary;
+	font-weight: $wght-black;
+     text-transform: capitalize;
+     text-decoration: underline;
+}
+
+.search-wrap:focus-within{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     padding: $spacereg;
+     z-index: 100;
+     background-color: $white-overlay;
+     transition: all $primary-transition;
+
+     form{
+          &::before{
+               right: $spacereg;
+               left: auto;
+               transition: all $primary-transition;
+          }
+
+          input::placeholder{
+               opacity: 1;
+          }
+     }
+}
+
+@media (min-width: 1024px) {
+     .search-wrap{
+          height: 50px;
+
+          form{
+               &{
+                    height: 100%;
+               }
+
+               input{
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 $spacesmall;
+
+                    &::placeholder{
+                         opacity: 1;
+                    }
+               }
+
+               &::before{
+                    top: calc(50px / 2);
+                    left: auto;
+                    right: $spacereg;
+                    width: auto;
+                    height: 50px;
+               }
+          }
+
+          #search-results{
+               max-height: 0px;
+          }
+
+          &:focus-within{
+               position: relative;
+               width: 200px;
+               height: 50px;
+               padding: 0;
+
+               input{
+                    max-height: 50px;
+                    padding: 0 $spacesmall;
+
+                    &:focus{
+                         &::placeholder{
+                              opacity: 0;
+                         }
+                    }
+               }
+
+               #search-results{
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    width: 600px;
+                    max-height: calc(100vh - calc(70px + $spacereg));
+                    padding: $spacereg;
+                    margin: $spacereg 0;
+               }
+          }
+     }
+}

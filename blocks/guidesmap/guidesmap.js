@@ -17,9 +17,9 @@ const GUIDEINTRO = [
      ['celtisorg/googlemap']
 ];
 
-const ALLOWEDGUIDSBLOCKS = [ 'omnifseupdt/guidesdestsec', 'omnifseupdt/guidesaddress', 'celtisorg/googlemap' ];
+const ALLOWEDGUIDSBLOCKS = [ 'celorgscratch/guidesdestsec', 'celorgscratch/guidesaddress', 'celtisorg/googlemap' ];
 // Registering the block
-registerBlockType('omnifseupdt/guidesmap', {
+registerBlockType('celorgscratch/guidesmap', {
      title: 'Neighborhood Guides Info & Map',
      icon: 'location',
      category: 'common',

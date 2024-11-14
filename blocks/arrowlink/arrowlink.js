@@ -1,7 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/block-editor';
 
-registerBlockType('omnifseupdt/arrowlink', {
+registerBlockType('celorgscratch/arrowlink', {
      title: 'Block Level/Arrow Link - Update',
      icon: 'button',
      category: 'design',

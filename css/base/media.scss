@@ -1,116 +1,238 @@
-     // Block images
-     figure {
-          position: relative;
+figure.block-image{
+     display: block;
+     position: relative;
+     width: 100%;
+     margin: 0 auto $spacelarge auto;
+
+     img{
+          displaY: block;
+          width: 100%;
+          max-width: $max-width;
+          height: 100%;
+          aspect-ratio: 16/9;
+          margin: 0 auto;
+          object-fit: content;
+          object-position: center center;
+     }
+
+     figcaption{
+          width: 100%;
+          max-width: $max-content-width;
+          padding: $spacesmall 0;
+          font: $size-button;
+          font-weight: $wght-bold;
+          margin: 0 auto 0 $smallleft;
+     }
+
+     &.alignfull{
+          img{
+               width: 100%;
+               max-width: 100%;
+          }
+     }
+}
+
+figure.block-video{
+     width: 100%;
+     max-width: $max-width;
+     margin: 0 auto $spacelarge auto;
+
+     video{
+          display: block;
           width: 100%;
           height: auto;
-          margin: 0;
-          padding: var(--spacelarge) 0;
-          container-type: inline-size;
+          aspect-ratio: 16/9;
+     }
+}
 
-          &.block-media-text__media {
-               padding: 0;
+.block-media-text{
+     width: $width;
+     max-width: $max-width;
+     margin: 0 auto $spacelarge $smallleft;
+
+     figure{
+          width: 100%;
+          aspect-ratio: 16/9;
+          margin: 0 0 $spacelarge 0;
+          overflow: hidden;
+
+          img{
+               display: block;
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               object-position: 50% 50%;
           }
 
-          figcaption {
-               position: absolute;
-               bottom: var(--spacelarge);
-               left: 0;
-               width: fit-content;
-               height: auto;
-               padding: var(--spacesmall) var(--spacereg);
-               margin: 0;
-               background-color: var(--background-modal);
-               border-radius: 0 var(--border-radius) 0 0;
-          }
-
-          @container (min-width: 1000px) {
-               &.alignfull.size-full figcaption {
-                    padding: var(--spacesmall) var(--spacereg) var(--spacesmall) calc(var(--width) / 9);
-               }
-          }
-
-          @container (min-width: 1440px) {
-               &.alignfull.size-full figcaption {
-                    padding: var(--spacesmall) var(--spacereg) var(--spacesmall) calc(((100vw - var(--max-width)) / 2) + (var(--spacegrid) + 3px));
-               }
-          }
-
-          img {
+          video{
                width: 100%;
                height: auto;
-               padding: 0;
-               margin: 0;
+               aspect-ratio: 16/9;
           }
      }
 
-     // Block images - END
+     #{$headerElements}{
+          margin: 0 0 $spacereg 0;
+     }
 
-     // Inline images
-     // Inline images - END
+     &.alignfull{
+          width: 100%;
+          max-width: none;
+          margin: 0 0 $spacelarge 0;
 
-     // Media text
-     .block-media-text {
-          gap: var(--spacereg);
-          container-type: inline-size;
+          figure{
+               order: 1;
+          }
 
-          figure {
+          .block-media-text__content{
+               width: $width;
+               margin: 0 auto 0 $smallleft;
+               order: 2;
+          }
+     }
+}
+
+@media (min-width: 1024px) {
+     .block-media-text{
+          display: grid;
+          grid-template-columns: repeat(2, 50%);
+          align-items: center;
+
+          #{$headerElements, $textElements}, .block-buttons{
+               width: calc(($width / 12) * 8);
+               margin: 0 0 $spacereg $spaceleft;
+          }
+     }
+}
+
+@media (min-width: 1024px) {
+     figure.block-image{
+          figcaption{
+               padding: $spacesmall calc($spacegrid * 3) $spacereg 0;
+               margin: 0 auto 0 $spacegrid;
+          }
+     }
+
+     .block-media-text{
+          min-height: 675px;
+          margin: 0 auto $spacexl auto;
+
+          &:has(video){
+               min-height: auto;
+          }
+
+          figure{
+               height: 100%;
+               aspect-ratio: 4/3;
+               margin: 0;
+
+               img{
+                    width: auto;
+                    object-fit: cover;
+               }
+
+               &:has(video){
+                    aspect-ratio: 16/9;
+               }
+
+               video{
+                    width: 100%;
+                    aspect-ratio: 16/9;
+               }
+          }
+
+          .block-media-text__content{
+               display: grid;
+               align-items: center;
+               align-content: center;
+               padding: 0;
+               gap: $spacereg;
                height: 100%;
 
-               img {
-                    width: 100%;
+               #{$headerElements, $textElements}, .block-buttons{
+                    width: calc(($width / 12) * 4);
+                    max-width: calc($spacegrid * 4);
+                    margin: 0 auto 0 $spacelarge;
+               }
+          }
+
+          &.has-media-on-the-right{
+               #{$headerElements, $textElements}, .block-buttons{
+                    margin: 0 $spacelarge 0 auto;
+               }
+          }
+
+          &.alignfull{
+               margin: 0 auto $spacexl auto;
+               
+               figure{
                     height: 100%;
-                    object-fit: cover;
-                    object-position: center center;
-               }
-          }
+                    max-height: 780px;
+                    aspect-ratio: auto;
 
-          &>div {
-               padding: var(--spacereg);
-          }
-
-          @container (min-width: 601px) {
-               &, &.has-media-on-the-right{
-                    grid-template-columns: 1fr;
-                    grid-template-rows: auto auto;
-
-                    figure {
-                         grid-column: 1;
-                         grid-row: 1;
+                    img{
+                         width: 100%;
+                         height: 100%;
+                         object-fit: cover;
+                         object-position: center center;
                     }
-     
-                    &>div {
-                         grid-column: 1;
-                         grid-row: 2;
-                    }
-               }
-          }
-
-          @container (min-width: 900px) {
-               grid-template-columns: 1fr 1fr;
-               grid-template-rows: 1fr;
-
-               figure {
-                    grid-column: 1;
-                    grid-row: 1;
-               }
-
-               &>div {
-                    grid-column: 2;
-                    grid-row: 1;
                }
 
                &.has-media-on-the-right{
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: 1fr;
-
-                    figure {
-                         grid-column: 2;
+                    .block-media-text__content{
+                         width: inherit;
+                         margin: inherit;
+                         order: 1;
                     }
-     
-                    &>div {
-                         grid-column: 1;
+
+                    figure{
+                         order: 2;
                     }
                }
           }
-
      }
+
+     .block-group{
+          &:has(.block-media-text){
+               min-height: 675px;
+               margin: 0 auto $spacexl auto;
+          }
+
+          .block-media-text{
+               margin: 0 auto;
+          }
+     }
+}
+
+@media (min-width: 1400px) {
+     figure.block-image{
+          figcaption{
+               padding: $spacesmall 0;
+               margin: 0 auto 0 $largeleft;
+          }
+     }
+
+     .block-media-text{
+          &.alignfull{
+               max-height: 780px;
+          }
+
+          .block-media-text__content{
+               #{$headerElements, $textElements}, .block-buttons{
+                    width: calc(($width / 12) * 4);
+                    max-width: calc($spacegrid * 4);
+                    margin: 0 0 0 $spacelarge;
+               }
+
+               #{$headerElements, $textElements}, .block-buttons{
+                    margin: 0 auto 0 $spacegrid;
+               }
+          }
+
+          &.has-media-on-the-right{
+               #{$headerElements, $textElements}, .block-buttons{
+                    margin: 0 $spacegrid 0 auto;
+               }
+          }
+     }
+}

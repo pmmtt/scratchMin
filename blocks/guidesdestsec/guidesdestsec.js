@@ -8,16 +8,16 @@ const GUIDEDESTINATIONSECTION = [
           placeholder: 'Destination Section Header',
           className: 'accord_btn',
      }],
-     ['omnifseupdt/guidesaddress']
+     ['celorgscratch/guidesaddress']
 ];
 
-const ALLOWEDGUIDSSECTION = [ 'omnifseupdt/guidesaddress' ];
+const ALLOWEDGUIDSSECTION = [ 'celorgscratch/guidesaddress' ];
 // Registering the block
-registerBlockType('omnifseupdt/guidesdestsec', {
+registerBlockType('celorgscratch/guidesdestsec', {
      title: 'Guides destination section',
      icon: 'location',
      category: 'common',
-     parent: 'omnifseupdt/guidesmap',
+     parent: 'celorgscratch/guidesmap',
      attributes: {
           content: {
                type: 'array',
